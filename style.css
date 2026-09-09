@@ -99,3 +99,92 @@ body:has(.passage-block) .passage-block,body:has(.mistake-box) .mistake-box{back
 body [style*="color:#111"],body [style*="color: #111"],body [style*="color:#222"],body [style*="color: #222"],body [style*="color:black"],body [style*="color: black"]{color:var(--text)!important}
 @media(max-width:900px){#library .grid-3{grid-template-columns:1fr 1fr!important}.km-links{display:none}.km-menu{display:block}.km-hero,.km-split,.km-author{grid-template-columns:1fr}.km-grid{grid-template-columns:1fr 1fr}.km-chapters{grid-template-columns:repeat(3,1fr)}.goal-grid,.framework,.grid{grid-template-columns:1fr!important}}
 @media(max-width:600px){#library .grid-3{grid-template-columns:1fr!important}.km-nav,.km-section,.km-hero{width:calc(100% - 26px)}.km-grid{grid-template-columns:1fr}.km-chapters{grid-template-columns:repeat(2,1fr)}.km-section{padding:75px 0}.km-buy-floating{right:14px!important;bottom:14px!important}.buy-card{padding:36px 22px!important}.chapter-nav{flex-wrap:wrap;justify-content:center!important;text-align:center}}
+
+
+/* ================================================================
+   FINAL CONTRAST + INTERACTION FIXES
+   Keep the original navy / cyan / gold first-design theme.
+   These rules intentionally override leftover light-theme styles.
+   ================================================================ */
+
+/* Quotes: author names and metadata must remain visible. */
+body:has(.qcard) .featured-label,
+body:has(.qcard) .featured-attr,
+body:has(.qcard) .featured-attr b,
+body:has(.qcard) .qcard .qattr,
+body:has(.qcard) .qcard .qattr b,
+body:has(.qcard) .qcard .qtext,
+body:has(.qcard) footer,
+body:has(.qcard) footer p{color:#f7f7f4!important}
+body:has(.qcard) .featured-label,
+body:has(.qcard) .qcard .chap-tag{color:var(--gold2)!important}
+body:has(.qcard) .featured-attr b,
+body:has(.qcard) .qcard .qattr b{color:var(--gold2)!important}
+body:has(.qcard) .featured,
+body:has(.qcard) .qcard{background:rgba(19,27,45,.96)!important;border-color:var(--line)!important}
+
+/* All-chapters overview: eliminate the white-card / white-title bug. */
+body:has(.chapter-card) .chapter-card,
+body:has(.chapter-card) .chapter-card.internal,
+body:has(.chapter-card) .chapter-card.financial,
+body:has(.chapter-card) .chapter-card.scaling,
+body:has(.chapter-card) .chapter-card.culmination,
+body:has(.chapter-card) .chapter-card.bonus{background:linear-gradient(145deg,#131b2d,#0f1727)!important;color:#f7f7f4!important;border-color:var(--line)!important}
+body:has(.chapter-card) .chapter-card .chapter-title,
+body:has(.chapter-card) .chapter-card .chapter-title a{color:#fff!important;font-family:var(--serif)!important}
+body:has(.chapter-card) .chapter-card .chapter-teaser,
+body:has(.chapter-card) .chapter-card .chapter-source,
+body:has(.chapter-card) .chapter-card .chapter-sub{color:var(--muted)!important}
+body:has(.chapter-card) .phase-heading{color:var(--gold2)!important}
+
+/* Kinetic Engine: every result surface is dark and readable. */
+body:has(.goal-grid) .result-header .result-label{color:var(--gold2)!important}
+body:has(.goal-grid) .result-header h2,
+body:has(.goal-grid) .score-title,
+body:has(.goal-grid) .path-title h2,
+body:has(.goal-grid) .book h3,
+body:has(.goal-grid) .insight h3{color:#fff!important}
+body:has(.goal-grid) .result-header p,
+body:has(.goal-grid) .book-author,
+body:has(.goal-grid) .book-number,
+body:has(.goal-grid) .path-title p,
+body:has(.goal-grid) .book-why,
+body:has(.goal-grid) .insight p{color:var(--muted)!important}
+body:has(.goal-grid) .score-card,
+body:has(.goal-grid) .book,
+body:has(.goal-grid) .insight{background:linear-gradient(145deg,#131b2d,#0f1727)!important;color:var(--text)!important;border-color:var(--line)!important;box-shadow:0 18px 45px rgba(0,0,0,.22)!important}
+body:has(.goal-grid) .score-track{background:rgba(255,255,255,.09)!important}
+body:has(.goal-grid) .score-label{color:#f7f7f4!important}
+body:has(.goal-grid) .score-fill{background:linear-gradient(90deg,var(--cyan),var(--gold))!important}
+body:has(.goal-grid) .book-action{color:var(--cyan)!important}
+body:has(.goal-grid) .insight{border-left:3px solid var(--gold)!important}
+body:has(.goal-grid) .restart{color:#fff!important;background:transparent!important;border-color:var(--line)!important}
+
+/* Tools Worth Using: keep the title elegant instead of oversized. */
+body:has(#km-toolkit-root) #km-toolkit-root .km-hero{max-width:900px!important;margin:0 auto 42px!important}
+body:has(#km-toolkit-root) #km-toolkit-root .km-hero h1{display:block!important;width:100%!important;max-width:none!important;font-size:clamp(32px,4.5vw,50px)!important;line-height:1.08!important;letter-spacing:-1.5px!important;white-space:normal!important;word-break:normal!important;overflow-wrap:normal!important;margin:0 0 16px!important;color:#fff!important}
+body:has(#km-toolkit-root) #km-toolkit-root .km-hero p{max-width:700px!important;color:var(--muted)!important}
+body:has(#km-toolkit-root) #km-toolkit-root{max-width:1180px!important;padding:80px 24px!important;background:transparent!important}
+
+/* Kinetic Room: restore the layered orbital line animation for every mode. */
+.km-room .rings{position:absolute;inset:50% auto auto 50%;width:330px;height:330px;transform:translate(-50%,-50%);pointer-events:none;z-index:1}
+.km-room .rings span{position:absolute;inset:0;border:1px solid rgba(114,229,232,.25);border-radius:50%;box-shadow:0 0 28px rgba(114,229,232,.05);animation:km-ring-spin 18s linear infinite}
+.km-room .rings span:nth-child(2){inset:24px;border-color:rgba(216,177,90,.28);animation-duration:13s;animation-direction:reverse}
+.km-room .rings span:nth-child(3){inset:55px;border-color:rgba(114,229,232,.22);animation-duration:10s}
+.km-room .rings span:nth-child(4){inset:-30px;border-color:rgba(240,212,134,.12);transform:rotateX(65deg) rotateY(18deg);animation-duration:24s;animation-direction:reverse}
+.km-room .rings span:nth-child(1){transform:rotateX(65deg) rotateY(18deg)}
+@keyframes km-ring-spin{to{transform:rotate(360deg)}}
+@keyframes km-ring-spin-tilt{to{transform:rotateX(65deg) rotateY(18deg) rotate(360deg)}}
+.km-room.reading .rings span{animation-duration:24s}
+.km-room.energized .rings span:nth-child(1){animation-duration:9s}.km-room.energized .rings span:nth-child(2){animation-duration:7s}.km-room.energized .rings span:nth-child(3){animation-duration:5s}.km-room.energized .rings span:nth-child(4){animation-duration:13s}
+.km-room.momentum .rings span:nth-child(1){animation-duration:6s}.km-room.momentum .rings span:nth-child(2){animation-duration:4s}.km-room.momentum .rings span:nth-child(3){animation-duration:3s}.km-room.momentum .rings span:nth-child(4){animation-duration:8s}
+.km-room.energized .core{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 0 100px rgba(114,229,232,.55)}
+.km-room.momentum .core{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 0 125px rgba(216,177,90,.35),0 0 70px rgba(114,229,232,.45)}
+
+/* Secondary pages: prevent legacy headings from inheriting light-theme colours. */
+body:has(.chapter-card) h1,body:has(.qcard) h1,body:has(.goal-grid) h1{color:#fff!important}
+
+@media(max-width:600px){
+  .km-room .rings{width:260px;height:260px}
+  body:has(#km-toolkit-root) #km-toolkit-root{padding:60px 16px!important}
+}
