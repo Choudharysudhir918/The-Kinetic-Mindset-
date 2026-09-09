@@ -1,9 +1,4 @@
-<!doctype html>
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<html><head><title>The Kinetic Mindset</title><link href="../css/style.css?v=4" rel="stylesheet"/></head><body class="km-page"><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style=""><div id="km-quiz-root">
+<div id="km-quiz-root">
 <style>
   #km-quiz-root {
     --kq-navy: #080d18;
@@ -214,67 +209,247 @@
   body{background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),#080d18!important;color:#e8edf5!important;}
   a{color:#72e5e8;}
 </style>
-<div class="kq-hero">
-<div class="kq-kicker">The Kinetic Mindset  -  Reader Tools</div>
-<h1>Two tools from the book,<br/>brought to life.</h1>
-<p>No download, no sign-up. Take the quiz, then play with the Momentum Calculator  -  the same ideas from the appendix, right here in your browser.</p>
-</div>
-<!-- ============ QUIZ ============ -->
-<section id="kq-quiz-section">
-<h2>Find your Kinetic Type</h2>
-<p class="kq-lead">Everyone starts a 90-day push with a default pattern already running. Answer honestly  -  about who you actually are, not who you're trying to become.</p>
-<div id="kq-quiz-cards"></div>
-<div class="kq-result" id="kq-quiz-result">
-<div class="kq-eyebrow">Your Kinetic Type is</div>
-<h3 id="kq-result-title"></h3>
-<p id="kq-result-desc"></p>
-<div class="kq-edge" id="kq-result-edge"></div>
-<div style="margin-top:22px;">
-<button class="kq-btn" id="kq-retake-btn">Retake the quiz</button>
-</div>
-</div>
-</section>
-<hr class="kq-divider"/>
-<!-- ============ MOMENTUM CALCULATOR ============ -->
-<section id="kq-calc-section">
-<h2>The Momentum Calculator</h2>
-<p class="kq-lead">Small, repeated motion beats big, occasional bursts. Move the sliders to see what your own 90 days could actually add up to.</p>
-<div class="kq-calc">
-<div class="kq-slider-row">
-<div class="kq-slider-label">
-<span>Minutes you can realistically commit, per day</span>
-<span class="kq-slider-value"><span id="kq-minutes-val">15</span> min</span>
-</div>
-<input id="kq-minutes" max="60" min="5" step="5" type="range" value="15"/>
-</div>
-<div class="kq-slider-row">
-<div class="kq-slider-label">
-<span>Realistic consistency over 90 days</span>
-<span class="kq-slider-value"><span id="kq-consistency-val">70</span>%</span>
-</div>
-<input id="kq-consistency" max="100" min="30" step="5" type="range" value="70"/>
-<div class="kq-bar-track"><div class="kq-bar-fill" id="kq-bar-fill"></div></div>
-</div>
-<div class="kq-calc-stats">
-<div class="kq-stat">
-<div class="kq-num" id="kq-days-shown">63</div>
-<div class="kq-label">days you'll actually show up</div>
-</div>
-<div class="kq-stat">
-<div class="kq-num" id="kq-total-hours">15.8</div>
-<div class="kq-label">total hours invested</div>
-</div>
-<div class="kq-stat">
-<div class="kq-num" id="kq-workdays">2.0</div>
-<div class="kq-label">full 8-hour workdays</div>
-</div>
-</div>
-<div class="kq-calc-line" id="kq-calc-line"></div>
-</div>
-</section>
-<footer>
+
+  <div class="kq-hero">
+    <div class="kq-kicker">The Kinetic Mindset  -  Reader Tools</div>
+    <h1>Two tools from the book,<br>brought to life.</h1>
+    <p>No download, no sign-up. Take the quiz, then play with the Momentum Calculator  -  the same ideas from the appendix, right here in your browser.</p>
+  </div>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="kq-quiz-section">
+    <h2>Find your Kinetic Type</h2>
+    <p class="kq-lead">Everyone starts a 90-day push with a default pattern already running. Answer honestly  -  about who you actually are, not who you're trying to become.</p>
+
+    <div id="kq-quiz-cards"></div>
+
+    <div class="kq-result" id="kq-quiz-result">
+      <div class="kq-eyebrow">Your Kinetic Type is</div>
+      <h3 id="kq-result-title"></h3>
+      <p id="kq-result-desc"></p>
+      <div class="kq-edge" id="kq-result-edge"></div>
+      <div style="margin-top:22px;">
+        <button class="kq-btn" id="kq-retake-btn">Retake the quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <hr class="kq-divider">
+
+  <!-- ============ MOMENTUM CALCULATOR ============ -->
+  <section id="kq-calc-section">
+    <h2>The Momentum Calculator</h2>
+    <p class="kq-lead">Small, repeated motion beats big, occasional bursts. Move the sliders to see what your own 90 days could actually add up to.</p>
+
+    <div class="kq-calc">
+      <div class="kq-slider-row">
+        <div class="kq-slider-label">
+          <span>Minutes you can realistically commit, per day</span>
+          <span class="kq-slider-value"><span id="kq-minutes-val">15</span> min</span>
+        </div>
+        <input type="range" id="kq-minutes" min="5" max="60" step="5" value="15">
+      </div>
+
+      <div class="kq-slider-row">
+        <div class="kq-slider-label">
+          <span>Realistic consistency over 90 days</span>
+          <span class="kq-slider-value"><span id="kq-consistency-val">70</span>%</span>
+        </div>
+        <input type="range" id="kq-consistency" min="30" max="100" step="5" value="70">
+        <div class="kq-bar-track"><div class="kq-bar-fill" id="kq-bar-fill"></div></div>
+      </div>
+
+      <div class="kq-calc-stats">
+        <div class="kq-stat">
+          <div class="kq-num" id="kq-days-shown">63</div>
+          <div class="kq-label">days you'll actually show up</div>
+        </div>
+        <div class="kq-stat">
+          <div class="kq-num" id="kq-total-hours">15.8</div>
+          <div class="kq-label">total hours invested</div>
+        </div>
+        <div class="kq-stat">
+          <div class="kq-num" id="kq-workdays">2.0</div>
+          <div class="kq-label">full 8-hour workdays</div>
+        </div>
+      </div>
+
+      <div class="kq-calc-line" id="kq-calc-line"></div>
+    </div>
+  </section>
+
+  <footer>
     Want the full 90-Day Tracker, the Sprint-by-Sprint reflections, and the rest of the book?
-    <br/><a href="../index.html">Get The Kinetic Mindset -&gt;</a>
-</footer>
+    <br><a href="the-kinetic-mindset.html">Get The Kinetic Mindset -></a>
+  </footer>
+
 </div>
-</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body></html>
+
+<script>
+(function(){
+  var root = document.getElementById("km-quiz-root");
+  if (!root) return;
+
+  // ---------------- Quiz ----------------
+  var questions = [
+    { q: "When you get a great new idea, you usually...", options: [
+        ["A", "Start immediately, tell everyone, burn bright for a week"],
+        ["B", "Fold it into a routine you already have and grind at it quietly"],
+        ["C", "Feel excited for a few days, then life gets busy and it fades"],
+        ["D", "Research it thoroughly before doing anything at all"] ] },
+    { q: "Your finances right now are...", options: [
+        ["A", "A little chaotic  -  you're better at earning than tracking"],
+        ["B", "On autopilot  -  unglamorous systems that just run"],
+        ["C", "Something you check in bursts, then avoid for months"],
+        ["D", "Meticulously planned but underfunded  -  still \u201cgetting ready\u201d"] ] },
+    { q: "When a habit you're building gets interrupted (travel, sickness, chaos)...", options: [
+        ["A", "You restart with even more enthusiasm than before"],
+        ["B", "You barely notice  -  the system carries you"],
+        ["C", "That's usually the end of it"],
+        ["D", "You redesign the whole plan before resuming"] ] },
+    { q: "Your calendar mostly serves...", options: [
+        ["A", "Whoever asked last, or whatever excites you today"],
+        ["B", "A structure you built and defend fiercely"],
+        ["C", "Everyone else  -  you rarely protect your own time"],
+        ["D", "A plan that looks perfect on paper but rarely survives the week"] ] },
+    { q: "Deep down, what's most likely to derail your next 90 days is...", options: [
+        ["A", "Losing interest once the novelty wears off"],
+        ["B", "Optimizing the system instead of the goal it's for"],
+        ["C", "One bad week turning into a bad month"],
+        ["D", "Never quite feeling \u201cready\u201d to start for real"] ] }
+  ];
+
+  var types = {
+    A: { name: "The Igniter",
+      desc: "You start faster than almost anyone. The risk isn't motivation  -  it's that the fire that starts things also abandons them the moment something newer and shinier appears.",
+      edge: "Your 90-Day Edge: Before each Sprint, write down the one thing you're most tempted to abandon this for. Naming the distraction in advance makes it easier to recognize when it shows up." },
+    B: { name: "The Grinder",
+      desc: "You have the discipline most people lack. The risk is mistaking motion for progress  -  perfecting a system that's quietly pointed at the wrong goal.",
+      edge: "Your 90-Day Edge: At every Phase Review, ask not \u201cdid I keep the system running\u201d but \u201cis this system still taking me where I actually want to go.\u201d" },
+    C: { name: "The Ghost",
+      desc: "You go all-in at the start, which is rare. The risk is that one missed day quietly becomes permission to miss the rest.",
+      edge: "Your 90-Day Edge: Decide right now what you'll do the first time you miss a day  -  not to avoid missing one, but so a single miss never becomes a silent quit." },
+    D: { name: "The Architect",
+      desc: "Your plans are better than most people's execution. The risk is that planning has quietly become a substitute for starting.",
+      edge: "Your 90-Day Edge: For the first Sprint only, act before the plan feels ready. An imperfect Day 1 beats a perfect Day 1 that never arrives." }
+  };
+
+  var answers = new Array(questions.length).fill(null);
+  var currentQ = 0;
+  var quizCards = root.querySelector("#kq-quiz-cards");
+
+  function renderQuiz(){
+    quizCards.innerHTML = "";
+    questions.forEach(function(item, qi){
+      var card = document.createElement("div");
+      card.className = "kq-card" + (qi === currentQ ? " active" : "");
+      card.id = "kq-card-" + qi;
+
+      var progress = document.createElement("div");
+      progress.className = "kq-progress";
+      progress.textContent = "Question " + (qi+1) + " of " + questions.length;
+      card.appendChild(progress);
+
+      var qEl = document.createElement("div");
+      qEl.className = "kq-question";
+      qEl.textContent = item.q;
+      card.appendChild(qEl);
+
+      item.options.forEach(function(pair){
+        var letter = pair[0], text = pair[1];
+        var btn = document.createElement("button");
+        btn.className = "kq-option" + (answers[qi] === letter ? " selected" : "");
+        btn.textContent = text;
+        btn.addEventListener("click", function(){
+          answers[qi] = letter;
+          renderQuiz();
+        });
+        card.appendChild(btn);
+      });
+
+      var nav = document.createElement("div");
+      nav.className = "kq-nav";
+
+      var backBtn = document.createElement("button");
+      backBtn.className = "kq-btn-plain";
+      backBtn.textContent = "<- Back";
+      backBtn.style.visibility = qi === 0 ? "hidden" : "visible";
+      backBtn.addEventListener("click", function(){ currentQ = qi - 1; renderQuiz(); });
+      nav.appendChild(backBtn);
+
+      var nextBtn = document.createElement("button");
+      nextBtn.className = "kq-btn";
+      nextBtn.disabled = !answers[qi];
+      nextBtn.textContent = qi === questions.length - 1 ? "See my type" : "Next ->";
+      nextBtn.addEventListener("click", function(){
+        if (qi === questions.length - 1){ showResult(); }
+        else { currentQ = qi + 1; renderQuiz(); }
+      });
+      nav.appendChild(nextBtn);
+
+      card.appendChild(nav);
+      quizCards.appendChild(card);
+    });
+  }
+
+  function showResult(){
+    var tally = { A:0, B:0, C:0, D:0 };
+    answers.forEach(function(a){ if (a) tally[a]++; });
+    var winner = "A";
+    Object.keys(tally).forEach(function(k){ if (tally[k] > tally[winner]) winner = k; });
+    var t = types[winner];
+
+    root.querySelector("#kq-result-title").textContent = t.name;
+    root.querySelector("#kq-result-desc").textContent = t.desc;
+    root.querySelector("#kq-result-edge").textContent = t.edge;
+    quizCards.style.display = "none";
+    root.querySelector("#kq-quiz-result").classList.add("active");
+  }
+
+  root.querySelector("#kq-retake-btn").addEventListener("click", function(){
+    answers = new Array(questions.length).fill(null);
+    currentQ = 0;
+    root.querySelector("#kq-quiz-result").classList.remove("active");
+    quizCards.style.display = "block";
+    renderQuiz();
+  });
+
+  renderQuiz();
+
+  // ---------------- Momentum Calculator ----------------
+  var minutesSlider = root.querySelector("#kq-minutes");
+  var consistencySlider = root.querySelector("#kq-consistency");
+
+  function updateCalc(){
+    var minutes = parseInt(minutesSlider.value, 10);
+    var consistency = parseInt(consistencySlider.value, 10);
+
+    root.querySelector("#kq-minutes-val").textContent = minutes;
+    root.querySelector("#kq-consistency-val").textContent = consistency;
+    root.querySelector("#kq-bar-fill").style.width = consistency + "%";
+
+    var daysShown = Math.round(90 * (consistency / 100));
+    var totalMinutes = daysShown * minutes;
+    var totalHours = totalMinutes / 60;
+    var workdays = totalHours / 8;
+
+    root.querySelector("#kq-days-shown").textContent = daysShown;
+    root.querySelector("#kq-total-hours").textContent = totalHours.toFixed(1);
+    root.querySelector("#kq-workdays").textContent = workdays.toFixed(1);
+
+    var line = "";
+    if (consistency >= 85) {
+      line = "That's " + workdays.toFixed(1) + " full workdays of deliberate effort  -  most people never sustain anything at " + consistency + "% for even a month, let alone 90 days.";
+    } else if (consistency >= 60) {
+      line = "Even missing roughly " + (100-consistency) + " days out of 100, that's still " + workdays.toFixed(1) + " full workdays of compounding effort by Day 90.";
+    } else {
+      line = "Even at a modest " + consistency + "%, " + minutes + " minutes a day still adds up to " + totalHours.toFixed(1) + " hours you wouldn't have otherwise spent moving forward.";
+    }
+    root.querySelector("#kq-calc-line").textContent = line;
+  }
+
+  minutesSlider.addEventListener("input", updateCalc);
+  consistencySlider.addEventListener("input", updateCalc);
+  updateCalc();
+})();
+</script>

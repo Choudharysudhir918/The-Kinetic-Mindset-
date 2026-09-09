@@ -1,6 +1,4 @@
-<!doctype html>
-<!DOCTYPE html>
-<html><head><title>The Kinetic Mindset</title><link href="../css/style.css?v=4" rel="stylesheet"/></head><body class="km-page"><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style=""><div id="km-toolkit-root">
+<div id="km-toolkit-root">
 <style>
   #km-toolkit-root {
     --km-navy: #080d18;
@@ -150,36 +148,147 @@
   body{background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),#080d18!important;color:#e8edf5!important;}
   a{color:#72e5e8;}
 </style>
-<div class="km-hero">
-<div class="km-kicker">The Kinetic Mindset Reader's Toolkit</div>
-<h1>Tools worth actually using.</h1>
-<p>Not a resource dump. Just the handful of apps that show up when you try to run the book's four pillars in real life — filter by pillar or search for what you need.</p>
-<div class="km-honesty"><strong>No affiliate links. No sponsorships.</strong> Some of these have free tiers that are genuinely enough — that's noted below.</div>
-</div>
-<div class="km-controls" id="km-controls">
-<button class="km-pill active" data-filter="all">All Tools</button>
-<button class="km-pill" data-filter="mindset">Mindset</button>
-<button class="km-pill" data-filter="habits">Habit Automation</button>
-<button class="km-pill" data-filter="money">Wealth Systems</button>
-<button class="km-pill" data-filter="time">Time &amp; Leverage</button>
-<div class="km-search">
-<input id="km-search" placeholder="Search tools (e.g. budget, journal, focus)…" type="text"/>
-</div>
-</div>
-<div id="km-results">
-<div class="km-category-heading" data-cat-heading="mindset">Mindset &amp; The Subconscious Engine</div>
-<div class="km-grid" data-cat="mindset"></div>
-<div class="km-category-heading" data-cat-heading="habits">Habit Automation</div>
-<div class="km-grid" data-cat="habits"></div>
-<div class="km-category-heading" data-cat-heading="money">Wealth Defense &amp; Systematic Offense</div>
-<div class="km-grid" data-cat="money"></div>
-<div class="km-category-heading" data-cat-heading="time">The Lifestyle Lever</div>
-<div class="km-grid" data-cat="time"></div>
-</div>
-<div class="km-empty-state" id="km-empty-state">No tools match that search. Try a different word, or clear the filter above.</div>
-<div class="km-footer">
+
+  <div class="km-hero">
+    <div class="km-kicker">The Kinetic Mindset Reader's Toolkit</div>
+    <h1>Tools worth actually using.</h1>
+    <p>Not a resource dump. Just the handful of apps that show up when you try to run the book's four pillars in real life — filter by pillar or search for what you need.</p>
+    <div class="km-honesty"><strong>No affiliate links. No sponsorships.</strong> Some of these have free tiers that are genuinely enough — that's noted below.</div>
+  </div>
+
+  <div class="km-controls" id="km-controls">
+    <button class="km-pill active" data-filter="all">All Tools</button>
+    <button class="km-pill" data-filter="mindset">Mindset</button>
+    <button class="km-pill" data-filter="habits">Habit Automation</button>
+    <button class="km-pill" data-filter="money">Wealth Systems</button>
+    <button class="km-pill" data-filter="time">Time &amp; Leverage</button>
+    <div class="km-search">
+      <input type="text" id="km-search" placeholder="Search tools (e.g. budget, journal, focus)…">
+    </div>
+  </div>
+
+  <div id="km-results">
+    <div class="km-category-heading" data-cat-heading="mindset">Mindset &amp; The Subconscious Engine</div>
+    <div class="km-grid" data-cat="mindset"></div>
+
+    <div class="km-category-heading" data-cat-heading="habits">Habit Automation</div>
+    <div class="km-grid" data-cat="habits"></div>
+
+    <div class="km-category-heading" data-cat-heading="money">Wealth Defense &amp; Systematic Offense</div>
+    <div class="km-grid" data-cat="money"></div>
+
+    <div class="km-category-heading" data-cat-heading="time">The Lifestyle Lever</div>
+    <div class="km-grid" data-cat="time"></div>
+  </div>
+
+  <div class="km-empty-state" id="km-empty-state">No tools match that search. Try a different word, or clear the filter above.</div>
+
+  <div class="km-footer">
     Tools change faster than books do — if something here is discontinued, look for a category, not the brand name.
-    <br/><a href="https://thekineticmindset.blogspot.com">Back to The Kinetic Mindset →</a>
+    <br><a href="index.html">Back to The Kinetic Mindset →</a>
+  </div>
+
 </div>
-</div>
-</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body></html>
+
+<script>
+(function(){
+  var root = document.getElementById("km-toolkit-root");
+  if (!root) return;
+
+  var tools = [
+    { name: "Day One", cat: "mindset", cost: "freemium",
+      desc: "A clean, private journaling app with daily reminders.",
+      why: "Pairs naturally with the book's WIN / FRICTION / BELIEF prompt rotation — one line, every day." },
+    { name: "Headspace", cat: "mindset", cost: "paid",
+      desc: "Guided meditation and short breathing exercises.",
+      why: "Useful during Phase 1, when you're trying to notice the old paradigm before you can challenge it." },
+    { name: "Notion", cat: "mindset", cost: "freemium",
+      desc: "A flexible notes and database tool.",
+      why: "Good for keeping a running 'belief log' — the moments you catch your old story running the show." },
+    { name: "Habitica", cat: "habits", cost: "free",
+      desc: "Turns your habit list into a small role-playing game.",
+      why: "If gamification actually gets you to show up, this is the honest way to use it — not a gimmick if it works." },
+    { name: "Streaks", cat: "habits", cost: "paid",
+      desc: "A dead-simple daily checklist for up to 24 habits (iOS).",
+      why: "No social feed, no gamified points — just a mark for each day, closest thing to the book's own Momentum Grid." },
+    { name: "Loop Habit Tracker", cat: "habits", cost: "free",
+      desc: "Open-source habit tracker with streak graphs (Android).",
+      why: "The free equivalent of Streaks if you're not on iOS — no account needed, nothing to sync or leak." },
+    { name: "YNAB (You Need A Budget)", cat: "money", cost: "paid",
+      desc: "Zero-based budgeting: every dollar gets a job before you spend it.",
+      why: "Matches the Wealth Defense chapter almost exactly — built around intention, not restriction." },
+    { name: "Empower Personal Dashboard", cat: "money", cost: "free",
+      desc: "Free net worth and investment tracking across all your accounts.",
+      why: "The fastest way to actually see the number you're trying to move during Phase 2." },
+    { name: "A low-cost index brokerage", cat: "money", cost: "free",
+      desc: "Vanguard, Fidelity, or Schwab — whichever has no account minimums where you live.",
+      why: "Not an app so much as a decision: automate a recurring transfer once, and the Systematic Offense chapter runs itself." },
+    { name: "Todoist", cat: "time", cost: "freemium",
+      desc: "Task management that doesn't get in its own way.",
+      why: "Useful for the Phase 3 exercise of writing down what only you are currently doing — so you can hand it off." },
+    { name: "Toggl Track", cat: "time", cost: "freemium",
+      desc: "One-click time tracking to see where your focus and hours actually go.",
+      why: "Run it for a week before Sprint 8 — you can't delegate a task you haven't noticed you're doing." },
+    { name: "Calendly", cat: "time", cost: "freemium",
+      desc: "Scheduling links that protect blocks of your calendar automatically.",
+      why: "The easiest way to defend the 'one unscheduled block per week' rule in the Lifestyle Lever chapter." }
+  ];
+
+  function render(){
+    var activePill = root.querySelector(".km-pill.active");
+    var activeFilter = activePill ? activePill.getAttribute("data-filter") : "all";
+    var searchEl = root.querySelector("#km-search");
+    var query = searchEl ? searchEl.value.trim().toLowerCase() : "";
+
+    var grids = root.querySelectorAll(".km-grid");
+    for (var i = 0; i < grids.length; i++) grids[i].innerHTML = "";
+
+    var anyVisible = false;
+    var catsWithResults = {};
+
+    tools.forEach(function(t){
+      var matchesFilter = activeFilter === "all" || t.cat === activeFilter;
+      var haystack = (t.name + " " + t.desc + " " + t.why).toLowerCase();
+      var matchesSearch = query === "" || haystack.indexOf(query) !== -1;
+      if (!matchesFilter || !matchesSearch) return;
+
+      anyVisible = true;
+      catsWithResults[t.cat] = true;
+
+      var card = document.createElement("div");
+      card.className = "km-card";
+      card.innerHTML =
+        '<div class="km-card-top">' +
+          '<h3>' + t.name + '</h3>' +
+          '<span class="km-cost ' + t.cost + '">' + t.cost + '</span>' +
+        '</div>' +
+        '<p>' + t.desc + '</p>' +
+        '<div class="km-why"><span>Why it\'s here —</span> ' + t.why + '</div>';
+      root.querySelector('.km-grid[data-cat="' + t.cat + '"]').appendChild(card);
+    });
+
+    var headings = root.querySelectorAll(".km-category-heading");
+    for (var j = 0; j < headings.length; j++){
+      var cat = headings[j].getAttribute("data-cat-heading");
+      headings[j].style.display = catsWithResults[cat] ? "block" : "none";
+    }
+
+    root.querySelector("#km-empty-state").style.display = anyVisible ? "none" : "block";
+    root.querySelector("#km-results").style.display = anyVisible ? "block" : "none";
+  }
+
+  var pills = root.querySelectorAll(".km-pill[data-filter]");
+  for (var p = 0; p < pills.length; p++){
+    pills[p].addEventListener("click", function(){
+      var all = root.querySelectorAll(".km-pill[data-filter]");
+      for (var k = 0; k < all.length; k++) all[k].classList.remove("active");
+      this.classList.add("active");
+      render();
+    });
+  }
+
+  root.querySelector("#km-search").addEventListener("input", render);
+
+  render();
+})();
+</script>

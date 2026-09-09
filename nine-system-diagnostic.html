@@ -1,9 +1,7 @@
-<!doctype html>
-<p> </p><!DOCTYPE html>
-
+<p>&nbsp;</p><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
+<meta charset="UTF-8">
 <title>The Nine-System Diagnostic</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
@@ -225,33 +223,194 @@
   body{background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),#080d18!important;color:#e8edf5!important;}
   a{color:#72e5e8;}
 </style>
-<link href="../css/style.css?v=4" rel="stylesheet"/></head>
-<body class="km-page"><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style="">
+<link rel="stylesheet" href="style.css?v=5"></head>
+<body>
 <div class="wrap">
-<header>
-<div class="kicker">A supplement to the book — not one of the ten chapters themselves</div>
-<h1>The Nine-System Diagnostic</h1>
-<p class="lede">Rate where you actually stand on each of the nine systems, honestly rather than aspirationally. The chart below will show you which one to open first — no need to start at Chapter 1 if Chapter 1 was never your weak point.</p>
-</header>
-<hr class="rule"/>
-<div id="rows"></div>
-<button class="run-btn" id="runBtn">Run the diagnostic</button>
-<div id="results">
-<div class="results-title">Your System Map</div>
-<div class="results-sub" id="resultsSub"></div>
-<div class="chart-card">
-<svg id="radar" style="max-width:460px;display:block;margin:0 auto;" viewbox="0 0 460 460" width="100%"></svg>
-</div>
-<div class="diagnosis">
-<div class="label">START HERE</div>
-<h3 id="weakTitle"></h3>
-<p id="weakBody"></p>
-<p><span class="book" id="weakBook"></span></p>
-</div>
-<div class="strength-note" id="strengthNote"></div>
-</div>
-<footer>Score again anytime — the honest answer changes as the systems themselves change.</footer>
+
+  <header>
+    <div class="kicker">A supplement to the book — not one of the ten chapters themselves</div>
+    <h1>The Nine-System Diagnostic</h1>
+    <p class="lede">Rate where you actually stand on each of the nine systems, honestly rather than aspirationally. The chart below will show you which one to open first — no need to start at Chapter 1 if Chapter 1 was never your weak point.</p>
+  </header>
+
+  <hr class="rule">
+
+  <div id="rows"></div>
+
+  <button class="run-btn" id="runBtn">Run the diagnostic</button>
+
+  <div id="results">
+    <div class="results-title">Your System Map</div>
+    <div class="results-sub" id="resultsSub"></div>
+
+    <div class="chart-card">
+      <svg id="radar" viewBox="0 0 460 460" width="100%" style="max-width:460px;display:block;margin:0 auto;"></svg>
+    </div>
+
+    <div class="diagnosis">
+      <div class="label">START HERE</div>
+      <h3 id="weakTitle"></h3>
+      <p id="weakBody"></p>
+      <p><span class="book" id="weakBook"></span></p>
+    </div>
+
+    <div class="strength-note" id="strengthNote"></div>
+  </div>
+
+  <footer>Score again anytime — the honest answer changes as the systems themselves change.</footer>
 </div>
 
-</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body>
+<script>
+const systems = [
+  {
+    n: 1, key: "paradigm", title: "The Blueprint", chapter: "Chapter 1",
+    prompt: "How consistently is your internal self-talk working for you rather than against you, especially under pressure?",
+    weak: "Your paradigm is the soil everything else grows in. If the internal narrative is still running old, self-defeating scripts, even a perfect habit system or a sound portfolio will quietly underperform what it's capable of.",
+    book: "As a Man Thinketh — James Allen"
+  },
+  {
+    n: 2, key: "habits", title: "The Foundation", chapter: "Chapter 2",
+    prompt: "How much of your daily good behavior happens automatically, without requiring willpower in the moment?",
+    weak: "Belief that never becomes automatic behavior stays exactly what it started as: a nice idea. Rebuild your keystone habit using the four laws — obvious, attractive, easy, satisfying — before adding anything else.",
+    book: "Atomic Habits — James Clear"
+  },
+  {
+    n: 3, key: "subconscious", title: "The Engine", chapter: "Chapter 3",
+    prompt: "How free do you feel from old, inherited beliefs about money, worth, or capability that you didn't consciously choose?",
+    weak: "A habit stack built on top of an unexamined subconscious will face constant, quiet resistance that feels like low motivation. Trace the belief to its source, then reprogram it deliberately.",
+    book: "The Power of Your Subconscious Mind — Joseph Murphy"
+  },
+  {
+    n: 4, key: "assets", title: "The Defense", chapter: "Chapter 4",
+    prompt: "How clearly can you say, right now, what percentage of your spending goes to assets versus disguised liabilities?",
+    weak: "This is the vocabulary everything financial afterward depends on. Rebuild your asset and liability lists honestly, using cash-flow direction, not conventional labels.",
+    book: "Rich Dad Poor Dad — Robert Kiyosaki"
+  },
+  {
+    n: 5, key: "investing", title: "The Offense", chapter: "Chapter 5",
+    prompt: "Do you have a written plan for how you'll react the next time the market falls sharply — or would you be deciding in the moment?",
+    weak: "Discipline written in advance, while calm, is what survives contact with real fear. Write your margin-of-safety rule and your crash-reaction plan before you need either.",
+    book: "The Intelligent Investor — Benjamin Graham"
+  },
+  {
+    n: 6, key: "people", title: "The Lever", chapter: "Chapter 6",
+    prompt: "In your last real disagreement, were you trying to win the argument, or trying to be genuinely understood?",
+    weak: "Every other system in this book eventually scales through other people. Rebuild the habit of genuine interest — starting with names, questions, and real listening — before anything more advanced.",
+    book: "How to Win Friends and Influence People — Dale Carnegie"
+  },
+  {
+    n: 7, key: "focus", title: "The Filter", chapter: "Chapter 7",
+    prompt: "In an honest week, what share of your working hours were genuinely deep rather than shallow and reactive?",
+    weak: "This is the fastest-decaying system in the whole book — deep work capacity erodes quickly without maintenance. Rebuild one small, protected, daily block before anything else.",
+    book: "Deep Work — Cal Newport"
+  },
+  {
+    n: 8, key: "resilience", title: "The Shield", chapter: "Chapter 8",
+    prompt: "After your last real setback, how long did it take before you could see the specific, fixable cause instead of a verdict on your worth?",
+    weak: "Ambitious effort guarantees setbacks. Practice the two-list technique — separating specific causes from identity conclusions — before your next one arrives.",
+    book: "Ego Is the Enemy — Ryan Holiday · Mindset — Carol S. Dweck"
+  },
+  {
+    n: 9, key: "freedom", title: "The Prize", chapter: "Chapter 9",
+    prompt: "Have you ever actually written down a specific number and lifestyle that would represent \u201cenough\u201d for you?",
+    weak: "Without a defined enough, accumulation runs forever without ever being spent on the life it was meant to buy. Write the specific target down this week.",
+    book: "The 4-Hour Workweek — Tim Ferriss · The Psychology of Money — Morgan Housel"
+  }
+];
+
+const rowsEl = document.getElementById('rows');
+systems.forEach(s => {
+  const row = document.createElement('div');
+  row.className = 'row';
+  row.innerHTML = `
+    <div class="row-head">
+      <div class="row-title">${s.title}</div>
+      <div class="row-num">${s.chapter.toUpperCase()}</div>
+    </div>
+    <div class="row-prompt">${s.prompt}</div>
+    <div class="slider-line">
+      <input type="range" min="1" max="10" value="5" id="slider-${s.key}">
+      <div class="score-badge" id="badge-${s.key}">5</div>
+    </div>
+    <div class="anchor-labels"><span>Barely present</span><span>Fully in place</span></div>
+  `;
+  rowsEl.appendChild(row);
+  const slider = row.querySelector(`#slider-${s.key}`);
+  const badge = row.querySelector(`#badge-${s.key}`);
+  slider.addEventListener('input', () => { badge.textContent = slider.value; });
+});
+
+function drawRadar(scores) {
+  const svg = document.getElementById('radar');
+  const cx = 230, cy = 230, R = 165;
+  const n = systems.length;
+  const angle = i => (Math.PI * 2 * i / n) - Math.PI / 2;
+  const pt = (i, r) => [cx + r * Math.cos(angle(i)), cy + r * Math.sin(angle(i))];
+
+  let svgContent = '';
+
+  // grid rings
+  [0.2,0.4,0.6,0.8,1.0].forEach(f => {
+    let poly = '';
+    for (let i = 0; i < n; i++) {
+      const [x,y] = pt(i, R*f);
+      poly += `${x},${y} `;
+    }
+    svgContent += `<polygon points="${poly}" fill="none" stroke="rgba(255,255,255,.11)" stroke-width="1"/>`;
+  });
+
+  // spokes + labels
+  systems.forEach((s,i) => {
+    const [x,y] = pt(i, R);
+    svgContent += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.11)" stroke-width="1"/>`;
+    const [lx,ly] = pt(i, R+34);
+    svgContent += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" font-size="11" font-family="Inter,sans-serif" font-weight="600" fill="#aab4c7">CH${s.n}</text>`;
+  });
+
+  // data polygon
+  let dataPoly = '';
+  systems.forEach((s,i) => {
+    const r = (scores[s.key]/10) * R;
+    const [x,y] = pt(i, r);
+    dataPoly += `${x},${y} `;
+  });
+  svgContent += `<polygon points="${dataPoly}" fill="#d8b15a" fill-opacity="0.22" stroke="#d8b15a" stroke-width="2.5"/>`;
+
+  // data dots
+  systems.forEach((s,i) => {
+    const r = (scores[s.key]/10) * R;
+    const [x,y] = pt(i, r);
+    svgContent += `<circle cx="${x}" cy="${y}" r="4" fill="#f0d486"/>`;
+  });
+
+  svg.innerHTML = svgContent;
+}
+
+document.getElementById('runBtn').addEventListener('click', () => {
+  const scores = {};
+  systems.forEach(s => {
+    scores[s.key] = parseInt(document.getElementById(`slider-${s.key}`).value, 10);
+  });
+
+  drawRadar(scores);
+
+  const sorted = [...systems].sort((a,b) => scores[a.key] - scores[b.key]);
+  const weakest = sorted[0];
+  const strongest = sorted[sorted.length - 1];
+
+  document.getElementById('resultsSub').textContent =
+    `Nine systems, scored honestly. The smallest point on the chart is where the next month of effort will do the most good.`;
+
+  document.getElementById('weakTitle').textContent = `${weakest.chapter} — ${weakest.title}  (scored ${scores[weakest.key]}/10)`;
+  document.getElementById('weakBody').textContent = weakest.weak;
+  document.getElementById('weakBook').textContent = weakest.book;
+
+  document.getElementById('strengthNote').innerHTML =
+    `Your strongest system right now is <b>${strongest.chapter} — ${strongest.title}</b> (${scores[strongest.key]}/10). Worth remembering: a system that's strong today can quietly decay without maintenance — Chapter 7 in particular tends to erode fastest. Re-run this diagnostic every few months rather than treating today's result as permanent.`;
+
+  document.getElementById('results').classList.add('show');
+  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+});
+</script>
+</body>
 </html>

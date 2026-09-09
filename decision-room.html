@@ -1,11 +1,9 @@
-<!doctype html>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>The Kinetic Mindset — Decision Room</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Kinetic Mindset — Decision Room </title>
 <style>
 :root{--cream:#FBF8F2;--paper:#fff;--ink:#221F1A;--soft:#5B5648;--gold:#8A6D3B;--green:#4A7856;--blue:#3E6B8A;--line:#E6DED1;--muted:#8A8478;--danger:#8A4D3B}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6}.wrap{max-width:1080px;margin:auto;padding:25px 20px 70px}
@@ -21,12 +19,13 @@ label{display:block;font-size:13px;font-weight:700;margin:19px 0 7px}textarea,in
 .archive-item{border-top:1px solid var(--line);padding:18px 0}.archive-item:first-child{border-top:0}.archive-title{font:500 22px/1.2 "Source Serif 4",Georgia,serif}.archive-meta{font-size:12px;color:var(--muted)}.empty{text-align:center;color:var(--muted);padding:25px}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:35px}
 @media(max-width:700px){.grid,.framework{grid-template-columns:1fr}.step{padding:21px}.buttons button{width:100%}}
 </style>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap" rel="stylesheet"/>
-<link href="../css/style.css?v=4" rel="stylesheet"/></head>
-<body class="km-page"><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style="">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5"></head>
+<body>
 <div class="wrap">
 <header class="hero"><div class="eyebrow">The Kinetic Mindset</div><h1>The Decision Room</h1><p>This turns your decision into a set of tailored questions. The room changes depending on what you are actually deciding.</p><div class="notice">Not advice. Not a prediction. A thinking tool for better reasoning.</div></header>
 <div class="progress"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+
 <section class="step active" data-step="0">
 <div class="kicker">Step 1 — The Decision</div><h2>What is actually at stake?</h2><p class="sub">The engine will detect the dominant dimensions of your decision and tailor the next room to them.</p>
 <label for="decision">What are you deciding?</label><textarea id="decision" placeholder="Example: Should I leave my current job and join a smaller company?"></textarea>
@@ -35,12 +34,14 @@ label{display:block;font-size:13px;font-weight:700;margin:19px 0 7px}textarea,in
 <label for="outcome">What are you really trying to move toward?</label><textarea id="outcome" placeholder="More freedom? Better work? Security? Growth? Meaning?"></textarea>
 <div class="buttons"><span></span><button class="gold" onclick="analyze()">Enter the Room →</button></div>
 </section>
+
 <section class="step" data-step="1">
 <div class="kicker">Step 2 — Decision Profile</div><h2 id="profileTitle">Your decision has a shape.</h2><p class="sub" id="profileSub"></p>
-<div class="grid" id="profileGrid"></div>
+<div id="profileGrid" class="grid"></div>
 <div class="callout"><strong>Tailored challenge</strong><p id="tailoredChallenge"></p></div>
 <div class="buttons"><button class="secondary" onclick="prev()">← Back</button><button class="gold" onclick="next()">Test My Instinct →</button></div>
 </section>
+
 <section class="step" data-step="2">
 <div class="kicker">Step 3 — Your Instinct</div><h2>Make your first answer explicit.</h2><p class="sub">The engine needs something concrete to challenge.</p>
 <label>Which direction are you leaning?</label>
@@ -49,41 +50,135 @@ label{display:block;font-size:13px;font-weight:700;margin:19px 0 7px}textarea,in
 <div class="callout"><strong id="instinctLabel">The useful friction</strong><p id="instinctChallenge"></p></div>
 <div class="buttons"><button class="secondary" onclick="prev()">← Back</button><button class="gold" onclick="next()">Open the Lenses →</button></div>
 </section>
+
 <section class="step" data-step="3">
 <div class="kicker">Step 4 — Tailored Lenses</div><h2>Look at the decision from the angles that matter.</h2><p class="sub">These lenses are selected from the language of your decision rather than shown as a generic checklist.</p>
-<div class="grid" id="lenses"></div>
+<div id="lenses" class="grid"></div>
 <label for="lensNotes">Which lens exposed something you were underweighting?</label><textarea id="lensNotes" placeholder="Write the observation you do not want to ignore."></textarea>
 <div class="buttons"><button class="secondary" onclick="prev()">← Back</button><button class="gold" onclick="next()">Challenge the Story →</button></div>
 </section>
+
 <section class="step" data-step="4">
 <div class="kicker">Step 5 — Challenge the Story</div><h2>Now argue against yourself.</h2><p class="sub">The stronger your opposite case, the more useful the decision becomes.</p>
-<label for="opposite" id="oppositeLabel">Make the strongest case for the opposite choice.</label><textarea id="opposite" placeholder="Do not make a straw-man argument. Make the case you would respect."></textarea>
+<label id="oppositeLabel" for="opposite">Make the strongest case for the opposite choice.</label><textarea id="opposite" placeholder="Do not make a straw-man argument. Make the case you would respect."></textarea>
 <label for="evidence">What observable evidence would change your mind?</label><textarea id="evidence" placeholder="Name facts, signals, experiments, or thresholds."></textarea>
 <label for="assumptions">Which assumption is carrying the most weight?</label><textarea id="assumptions" placeholder="If this assumption is wrong, what part of your decision collapses?"></textarea>
 <div class="callout"><strong>Second-order question</strong><p id="secondOrder"></p></div>
 <div class="buttons"><button class="secondary" onclick="prev()">← Back</button><button class="gold" onclick="next()">Find the Blind Spot →</button></div>
 </section>
+
 <section class="step" data-step="5">
-<div class="kicker">Step 6 — Blind Spot &amp; First Move</div><h2>Don't solve the whole future.</h2><p class="sub">Find the uncertainty that matters most, then design a smaller move that teaches you something.</p>
-<div class="grid" id="blindCards"></div>
+<div class="kicker">Step 6 — Blind Spot & First Move</div><h2>Don't solve the whole future.</h2><p class="sub">Find the uncertainty that matters most, then design a smaller move that teaches you something.</p>
+<div id="blindCards" class="grid"></div>
 <label for="blind">What is most uncertain now?</label><textarea id="blind" placeholder="Name the uncertainty rather than pretending it isn't there."></textarea>
 <label for="firstStep">What is the smallest reversible step you could take?</label><textarea id="firstStep" placeholder="A conversation, trial, research task, deadline, prototype, or other experiment."></textarea>
 <label for="killSignal">What would make you stop or change course?</label><textarea id="killSignal" placeholder="Define a signal before emotion gets involved."></textarea>
 <div class="buttons"><button class="secondary" onclick="prev()">← Back</button><button class="gold" onclick="build()">Build My Framework →</button></div>
 </section>
+
 <section class="step" data-step="6">
 <div class="kicker">Step 7 — Your Decision Framework</div><h2 id="finalTitle">A decision you can explain.</h2><p class="sub">You do not need certainty. You need a clear relationship with evidence, risk, and the next move.</p>
-<div class="framework" id="framework"></div>
-<label for="revisit">When should you revisit this?</label><input id="revisit" type="date"/>
+<div id="framework" class="framework"></div>
+<label for="revisit">When should you revisit this?</label><input id="revisit" type="date">
 <div class="callout"><strong>Decision rule</strong><p id="decisionRule"></p></div>
 <div class="buttons"><button class="secondary" onclick="prev()">← Back</button><button class="gold" onclick="saveDecision()">Save to Decision Archive</button></div>
 <div id="saveMsg" style="margin-top:12px;color:var(--green);font-size:13px"></div>
 </section>
+
 <section class="step" id="archiveStep">
 <div class="kicker">Decision Archive</div><h2>Past rooms.</h2><p class="sub">Saved only in this browser. Nothing is sent to a server.</p><div id="archive"></div><div class="buttons" id="archiveButtons" style="display:none"><button class="danger" onclick="clearArchive()">Clear Archive</button></div>
 </section>
 <div class="footer">The Kinetic Mindset · Think clearly. Act deliberately.</div>
 </div>
 
-</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body>
+<script>
+const A=String.fromCharCode(8212),steps=[...document.querySelectorAll(".step:not(#archiveStep)")],dots=[...document.querySelectorAll(".dot")];
+let current=0,leaning="",profile={scores:{},types:[]};
+
+const lensBank={
+money:{key:"Money",source:"The Psychology of Money + The Intelligent Investor",title:"What does this do to your flexibility?",text:"Separate upside from survivability. If your assumptions are wrong, how much financial room remains?",challenge:"What is the cost of being wrong — and can you afford the timing?"},
+career:{key:"Work",source:"Deep Work + The 4-Hour Workweek",title:"Does this improve the quality of your work?",text:"Look beyond the title or immediate reward. What will this choice do to attention, autonomy, leverage, and the quality of your working life?",challenge:"Are you choosing better work, or merely a different-looking workload?"},
+people:{key:"People",source:"How to Win Friends and Influence People",title:"Who else sees a different version of this?",text:"Someone affected by the decision may have information or incentives you do not. What would they say you are missing?",challenge:"Which person's perspective would be most inconvenient — and therefore most useful?"},
+growth:{key:"Growth",source:"Mindset + Atomic Habits",title:"Which choice keeps you learning?",text:"Prefer choices that generate feedback and improve your future capability rather than merely protecting today's identity.",challenge:"What will this decision teach you, even if it fails?"},
+ego:{key:"Ego",source:"Ego Is the Enemy",title:"Would you still choose this if nobody knew?",text:"Status, pride, fear of looking foolish, and the desire to prove yourself can disguise themselves as rational reasons.",challenge:"How much of your argument survives if reputation is removed?"},
+meaning:{key:"Purpose",source:"Man's Search for Meaning",title:"What are you moving toward?",text:"Some discomfort cannot be optimized away. Which direction gives that discomfort a worthwhile purpose?",challenge:"If both options are difficult, which difficulty would you willingly carry?"},
+systems:{key:"Systems",source:"Atomic Habits",title:"What system will this choice create?",text:"Judge the recurring environment, habits, incentives, and defaults — not only the immediate outcome.",challenge:"What will this decision make easier or harder every ordinary Tuesday?"},
+risk:{key:"Risk",source:"The Intelligent Investor",title:"Where is your margin of safety?",text:"Look for the gap between what must go right and what could go wrong. A robust choice survives imperfect assumptions.",challenge:"What happens if you are 30% wrong about your key assumption?"}
+};
+
+function analyze(){
+ let d=(v("decision")+" "+v("nothing")+" "+v("fear")+" "+v("outcome")).toLowerCase();
+ if(!v("decision").trim()){alert("Write the decision first.");return}
+ let scores={money:0,career:0,people:0,growth:0,ego:0,meaning:0,systems:0,risk:0};
+ const words={money:["money","salary","income","cost","price","debt","invest","investment","financial","afford","wealth","business","cash","profit"],
+ career:["job","work","career","role","company","business","project","client","promotion","boss","employee","team"],
+ people:["partner","family","friend","people","team","relationship","marry","marriage","child","children","parent","customer","cofounder"],
+ growth:["learn","skill","growth","change","improve","practice","study","education","experience","challenge"],
+ ego:["prove","pride","status","respect","embarrass","failure","look","impress","reputation","prestige"],
+ meaning:["purpose","meaning","values","life","fulfill","freedom","happy","happiness","important","calling"],
+ systems:["habit","routine","daily","system","environment","schedule","discipline","process","remote","location"],
+ risk:["risk","uncertain","safe","danger","downside","loss","wrong","regret","failure","worst","backup"]};
+ Object.keys(words).forEach(k=>words[k].forEach(w=>{if(d.includes(w))scores[k]++}));
+ Object.keys(scores).forEach(k=>scores[k]+= (k==="risk"&&v("fear").trim()?1:0));
+ let types=Object.entries(scores).sort((a,b)=>b[1]-a[1]).slice(0,3).filter(x=>x[1]>0).map(x=>x[0]);
+ if(types.length<2)types=["growth","risk","meaning"];
+ profile={scores,types};
+ renderProfile();show(1);
+}
+function renderProfile(){
+ const names=profile.types.map(k=>lensBank[k].key);
+ $("profileTitle").textContent=names[0]+" + "+names[1]+(names[2]?" + "+names[2]:"")+" decision";
+ $("profileSub").textContent="The language of your decision suggests that "+names.join(", ").toLowerCase()+" deserve more attention than a generic checklist would give them.";
+ $("profileGrid").innerHTML=profile.types.map(k=>{let x=lensBank[k];return `<div class="lens"><span class="tag">${esc(x.key)}</span><span class="source">${esc(x.source)}</span><strong>${esc(x.title)}</strong><p class="prompt">${esc(x.text)}</p></div>`}).join("");
+ $("tailoredChallenge").textContent=lensBank[profile.types[0]].challenge;
+ $("instinctChallenge").textContent="Your instinct is not the conclusion. It is the first hypothesis. We are going to look for the evidence that would make it wrong.";
+}
+function choose(el,val){document.querySelectorAll("#leaning .choice").forEach(x=>x.classList.remove("selected"));el.classList.add("selected");leaning=val}
+function renderLenses(){
+ let keys=[...profile.types,...Object.keys(lensBank).filter(k=>!profile.types.includes(k))].slice(0,5);
+ $("lenses").innerHTML=keys.map(k=>{let x=lensBank[k];return `<div class="lens"><span class="tag">${esc(x.key)}</span><span class="source">${esc(x.source)}</span><strong>${esc(x.title)}</strong><p class="prompt">${esc(x.text)}</p><p class="prompt" style="margin-top:10px"><b>Question:</b> ${esc(x.challenge)}</p></div>`}).join("");
+}
+function renderChallenge(){
+ const opposite=leaning==="yes"?"not doing it":leaning==="no"?"doing it":"the other option";
+ $("oppositeLabel").textContent="Make the strongest case for "+opposite+".";
+ const k=profile.types[0];$("secondOrder").textContent=`If your preferred option works, what new problem might it create? If it fails, what will you wish you had prepared for?`;
+}
+function next(){
+ if(current===1){show(2);return}
+ if(current===2){if(!leaning||!v("reason").trim()){alert("Choose a direction and explain why.");return}renderLenses();show(3);return}
+ if(current===3){if(!v("lensNotes").trim()){alert("Write what one lens changed for you.");return}renderChallenge();show(4);return}
+ if(current===4){if(!v("opposite").trim()){alert("Make the opposite case as strong as possible.");return}renderBlind();show(5);return}
+ if(current<6)show(current+1);
+}
+function renderBlind(){
+ let k=profile.types[0],x=lensBank[k];
+ $("blindCards").innerHTML=`<div class="lens"><span class="source">Dominant lens · ${esc(x.key)}</span><strong>${esc(x.title)}</strong><p class="prompt">${esc(x.challenge)}</p></div><div class="lens"><span class="source">Universal test</span><strong>What would you regret not checking?</strong><p class="prompt">Identify one piece of information that could materially change the decision.</p></div>`;
+}
+function build(){
+ if(!v("blind").trim()||!v("firstStep").trim()){alert("Name the uncertainty and the smallest reversible step.");return}
+ const dir=leaning==="yes"?"Do it":leaning==="no"?"Don't do it":"Uncertain";
+ const fields=[["Decision",v("decision")],["Current instinct",dir],["What happens if I do nothing",v("nothing")],["What I fear",v("fear")],["What I am moving toward",v("outcome")||"Not specified"],["Why the instinct feels right",v("reason")],["Tailored lens insight",v("lensNotes")],["Strongest opposite case",v("opposite")],["Evidence that could change my mind",v("evidence")||"Not specified"],["Core assumption",v("assumptions")||"Not specified"],["Biggest uncertainty",v("blind")],["Smallest reversible step",v("firstStep")],["Stop/change signal",v("killSignal")||"Not specified"]];
+ $("framework").innerHTML=fields.map(x=>`<div class="field"><h4>${esc(x[0])}</h4><p>${esc(x[1])}</p></div>`).join("");
+ $("decisionRule").textContent=`Do not commit to the whole future. Commit to the next reversible step, then update the decision when the evidence changes.`;
+ $("finalTitle").textContent=leaning==="yes"?"You have a case for moving forward.":leaning==="no"?"You have a case for holding back.":"You have a framework for deciding.";
+ show(6);
+}
+function saveDecision(){
+ let a=JSON.parse(localStorage.getItem("kineticDecisionArchive")||"[]");
+ a.unshift({id:Date.now(),date:new Date().toLocaleDateString(),revisit:v("revisit")||"No date",title:v("decision"),blind:v("blind"),step:v("firstStep"),direction:leaning});
+ localStorage.setItem("kineticDecisionArchive",JSON.stringify(a.slice(0,30)));$("saveMsg").textContent="Saved to this browser.";renderArchive();
+}
+function renderArchive(){
+ let a=JSON.parse(localStorage.getItem("kineticDecisionArchive")||"[]"),el=$("archive");
+ $("archiveButtons").style.display=a.length?"flex":"none";
+ el.innerHTML=a.length?a.map(x=>`<div class="archive-item"><div class="archive-title">${esc(x.title)}</div><div class="archive-meta">Saved ${esc(x.date)} · Revisit: ${esc(x.revisit)}</div><p><b>Blind spot:</b> ${esc(x.blind)}</p><p><b>Next step:</b> ${esc(x.step)}</p></div>`).join(""):'<div class="empty">No decisions saved yet.</div>';
+}
+function clearArchive(){if(confirm("Clear every saved decision from this browser?")){localStorage.removeItem("kineticDecisionArchive");renderArchive()}}
+function show(n){current=n;steps.forEach((s,i)=>s.classList.toggle("active",i===n));dots.forEach((d,i)=>d.classList.toggle("active",i<=n));window.scrollTo({top:0,behavior:"smooth"})}
+function prev(){if(current>0)show(current-1)}
+function v(id){return $(id).value||""}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+renderArchive();
+</script>
+</body>
 </html>
