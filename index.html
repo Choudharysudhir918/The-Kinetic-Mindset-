@@ -12,4 +12,22 @@
      FLOATING BUY NOW BUTTON
      Replace href="#book" with your real Amazon/Flipkart/publisher/store URL.
      ========================================================= -->
-<a class="km-buy-floating" href="#book" aria-label="Buy The Kinetic Mindset">BUY NOW</a><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="main.js?v=2"></script></body></html>
+<div class="km-floating-actions" aria-label="Support and buy options">
+<a class="km-donate-floating" href="#" id="kmDonateOpen" aria-label="Donate now">DONATE NOW</a>
+<a class="km-buy-floating" href="#book" aria-label="Buy The Kinetic Mindset">BUY NOW</a>
+</div>
+<div class="km-donate-modal" id="kmDonateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="kmDonateTitle">
+  <div class="km-donate-backdrop" data-close-donate></div>
+  <div class="km-donate-card">
+    <button class="km-donate-close" id="kmDonateClose" aria-label="Close donation window">×</button>
+    <div class="km-kicker">Support the work</div>
+    <h2 id="kmDonateTitle">Donate to The Kinetic Mindset</h2>
+    <p>If this work has helped you, you can support the project using the QR code below.</p>
+    <div class="km-qr-frame">
+      <img src="donate-qr.png" alt="Donation QR code" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+      <div class="km-qr-placeholder" style="display:none">YOUR<br>QR CODE<small>Replace <strong>donate-qr.png</strong><br>with your payment QR image.</small></div>
+    </div>
+    <div class="km-donate-note">Scan with your payment app to donate.</div>
+  </div>
+</div>
+<footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="main.js?v=2"></script></body></html>

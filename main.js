@@ -10,4 +10,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   const room=document.querySelector('.km-room'),buttons=document.querySelectorAll('.controls button');
   const copy={focus:'Reduce noise. Identify the one move that matters. Then act.',energy:'Increase intensity without increasing chaos. Give the system a stronger pulse.',momentum:'Stop waiting for perfect certainty. Convert the next clear insight into movement.'};
   buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');if(room){room.classList.remove('reading','energized','momentum');const m=b.dataset.mode||'focus';room.classList.add(m==='focus'?'reading':m==='energy'?'energized':'momentum');const cap=room.querySelector('.room-caption');if(cap)cap.textContent=copy[m];const core=room.querySelector('.core');if(core)core.textContent=m.toUpperCase();}}));
+
+  const donateOpen=document.getElementById('kmDonateOpen');
+  const donateModal=document.getElementById('kmDonateModal');
+  const donateClose=document.getElementById('kmDonateClose');
+  const closeDonate=()=>{if(donateModal){donateModal.classList.remove('open');donateModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}};
+  if(donateOpen&&donateModal){donateOpen.addEventListener('click',e=>{e.preventDefault();donateModal.classList.add('open');donateModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';});}
+  if(donateClose) donateClose.addEventListener('click',closeDonate);
+  if(donateModal) donateModal.addEventListener('click',e=>{if(e.target.matches('[data-close-donate]')) closeDonate();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') closeDonate();});
 });
