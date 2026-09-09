@@ -1,0 +1,257 @@
+<!doctype html>
+<p> </p><!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>The Nine-System Diagnostic</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --cream:#080d18;
+    --paper:#131b2d;
+    --ink:#f7f7f4;
+    --ink-soft:#aab4c7;
+    --gold:#d8b15a;
+    --gold-deep:#f0d486;
+    --line:rgba(255,255,255,.11);
+    --track:#19233a;
+    --accent-weak:#72e5e8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),var(--cream);
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    padding:48px 20px 80px;
+  }
+  .wrap{max-width:720px;margin:0 auto;}
+
+  header{margin-bottom:44px;}
+  .kicker{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+  }
+  h1{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:clamp(32px,5vw,46px);
+    line-height:1.08;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  .lede{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:18px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+
+  .rule{border:none;border-top:1px solid var(--line);margin:36px 0;}
+
+  .row{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .row-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:6px;
+  }
+  .row-title{
+    font-family:'Source Serif 4',serif;
+    font-weight:600;
+    font-size:19px;
+  }
+  .row-num{
+    font-size:12px;
+    color:var(--gold-deep);
+    font-weight:600;
+    letter-spacing:.03em;
+    white-space:nowrap;
+    padding-top:3px;
+  }
+  .row-prompt{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.5;
+    margin-bottom:16px;
+    max-width:58ch;
+  }
+
+  .slider-line{display:flex;align-items:center;gap:14px;}
+  input[type=range]{
+    -webkit-appearance:none;
+    appearance:none;
+    flex:1;
+    height:4px;
+    border-radius:2px;
+    background:var(--track);
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:18px;height:18px;border-radius:50%;
+    background:var(--gold);
+    border:2px solid var(--paper);
+    box-shadow:0 0 0 1px var(--gold);
+    cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:18px;height:18px;border-radius:50%;
+    background:var(--gold);
+    border:2px solid var(--paper);
+    box-shadow:0 0 0 1px var(--gold);
+    cursor:pointer;
+  }
+  .score-badge{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:20px;
+    width:34px;
+    text-align:right;
+    color:var(--gold-deep);
+    font-variant-numeric:tabular-nums;
+  }
+  .anchor-labels{
+    display:flex;justify-content:space-between;
+    font-size:11.5px;color:#9a927c;margin-top:6px;
+  }
+
+  .run-btn{
+    display:block;
+    width:100%;
+    margin-top:38px;
+    padding:16px;
+    background:var(--ink);
+    color:var(--cream);
+    border:none;
+    border-radius:3px;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+    letter-spacing:.01em;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  .run-btn:hover{background:var(--gold-deep);}
+
+  /* results */
+  #results{
+    margin-top:52px;
+    display:none;
+  }
+  #results.show{display:block;}
+  .results-title{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:26px;
+    margin-bottom:6px;
+  }
+  .results-sub{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin-bottom:28px;
+  }
+  .chart-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:28px 12px;
+    margin-bottom:30px;
+  }
+  .diagnosis{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent-weak);
+    border-radius:2px;
+    padding:24px 26px;
+  }
+  .diagnosis .label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--accent-weak);
+    margin-bottom:8px;
+  }
+  .diagnosis h3{
+    font-family:'Source Serif 4',serif;
+    font-size:22px;
+    margin:0 0 10px;
+  }
+  .diagnosis p{
+    font-size:15px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    margin:0 0 10px;
+  }
+  .diagnosis p:last-child{margin-bottom:0;}
+  .diagnosis .book{
+    font-style:italic;
+    color:var(--gold-deep);
+  }
+
+  .strength-note{
+    margin-top:20px;
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .strength-note b{color:var(--ink);}
+
+  footer{
+    margin-top:56px;
+    font-size:13px;
+    color:#a39c86;
+    text-align:center;
+  }
+
+  @media (max-width:520px){
+    .row-title{font-size:17px;}
+  }
+
+  /* KINETIC MINDSET THEME INTEGRATION
+     This page keeps its original content/functionality while matching
+     the main site's navy + cyan + gold visual system. */
+  body{background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),#080d18!important;color:#e8edf5!important;}
+  a{color:#72e5e8;}
+</style>
+<link href="../css/style.css" rel="stylesheet"/></head>
+<body><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style="">
+<div class="wrap">
+<header>
+<div class="kicker">A supplement to the book — not one of the ten chapters themselves</div>
+<h1>The Nine-System Diagnostic</h1>
+<p class="lede">Rate where you actually stand on each of the nine systems, honestly rather than aspirationally. The chart below will show you which one to open first — no need to start at Chapter 1 if Chapter 1 was never your weak point.</p>
+</header>
+<hr class="rule"/>
+<div id="rows"></div>
+<button class="run-btn" id="runBtn">Run the diagnostic</button>
+<div id="results">
+<div class="results-title">Your System Map</div>
+<div class="results-sub" id="resultsSub"></div>
+<div class="chart-card">
+<svg id="radar" style="max-width:460px;display:block;margin:0 auto;" viewbox="0 0 460 460" width="100%"></svg>
+</div>
+<div class="diagnosis">
+<div class="label">START HERE</div>
+<h3 id="weakTitle"></h3>
+<p id="weakBody"></p>
+<p><span class="book" id="weakBook"></span></p>
+</div>
+<div class="strength-note" id="strengthNote"></div>
+</div>
+<footer>Score again anytime — the honest answer changes as the systems themselves change.</footer>
+</div>
+
+</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<!DOCTYPE html>
+<html><head><title>The Kinetic Mindset</title><link href="../css/style.css" rel="stylesheet"/></head><body><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style=""><div id="km-toolkit-root">
+<style>
+  #km-toolkit-root {
+    --km-navy: #080d18;
+    --km-panel: #131b2d;
+    --km-panel-line: rgba(255,255,255,.11);
+    --km-gold: #d8b15a;
+    --km-gold-soft: #f0d486;
+    --km-cream: #e8edf5;
+    --km-gray: #aab4c7;
+
+    background: var(--km-navy) !important;
+    color: var(--km-cream) !important;
+    font-family: 'Source Sans 3', Arial, sans-serif !important;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+  #km-toolkit-root, #km-toolkit-root *{ box-sizing: border-box; }
+  #km-toolkit-root a{ text-decoration: none; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  #km-toolkit-root .km-hero{ text-align: center; margin-bottom: 48px; }
+  #km-toolkit-root .km-kicker{
+    color: var(--km-gold) !important;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+  #km-toolkit-root h1{
+    font-family: 'Fraunces', Georgia, serif !important;
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.2;
+    margin: 0 0 18px;
+    color: #fff !important;
+  }
+  #km-toolkit-root .km-hero p{
+    color: var(--km-gray) !important;
+    font-size: 16.5px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  #km-toolkit-root .km-honesty{
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--km-gray) !important;
+    font-style: italic;
+  }
+  #km-toolkit-root .km-honesty strong{ color: var(--km-cream) !important; font-style: normal; }
+
+  #km-toolkit-root .km-controls{
+    display:flex; flex-wrap: wrap; gap: 10px;
+    align-items:center; justify-content:center;
+    margin-bottom: 40px;
+  }
+  #km-toolkit-root .km-pill{
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--km-panel-line);
+    background: var(--km-panel) !important;
+    color: var(--km-gray) !important;
+    cursor: pointer;
+    transition: border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  #km-toolkit-root .km-pill:hover{ border-color: var(--km-gold-soft); color: var(--km-cream) !important; }
+  #km-toolkit-root .km-pill.active{
+    border-color: var(--km-gold);
+    background: rgba(201,162,89,0.12) !important;
+    color: var(--km-gold) !important;
+  }
+  #km-toolkit-root .km-search{ flex-basis: 100%; display:flex; justify-content:center; margin-top: 4px; }
+  #km-toolkit-root .km-search input{
+    width: 100%; max-width: 360px;
+    background: var(--km-panel) !important;
+    border: 1px solid var(--km-panel-line);
+    color: var(--km-cream) !important;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14.5px;
+  }
+  #km-toolkit-root .km-search input::placeholder{ color: var(--km-gray); }
+  #km-toolkit-root .km-search input:focus{ outline: none; border-color: var(--km-gold-soft); }
+
+  #km-toolkit-root .km-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  #km-toolkit-root .km-card{
+    background: var(--km-panel) !important;
+    border: 1px solid var(--km-panel-line);
+    border-radius: 10px;
+    padding: 22px;
+    display:flex; flex-direction:column;
+    transition: border-color .15s ease;
+  }
+  #km-toolkit-root .km-card:hover{ border-color: var(--km-gold-soft); }
+  #km-toolkit-root .km-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 10px; gap: 10px; }
+  #km-toolkit-root .km-card h3{
+    font-family:'Fraunces', Georgia, serif !important;
+    font-size: 19px; color: #fff !important; margin:0;
+  }
+  #km-toolkit-root .km-cost{
+    font-size: 11.5px; padding: 3px 9px; border-radius: 999px;
+    white-space:nowrap; border: 1px solid var(--km-panel-line); color: var(--km-gray);
+  }
+  #km-toolkit-root .km-cost.free{ color: #72e5e8 !important; border-color: rgba(111,169,138,0.4); }
+  #km-toolkit-root .km-cost.freemium{ color: var(--km-gold) !important; border-color: rgba(201,162,89,0.4); }
+  #km-toolkit-root .km-cost.paid{ color: #72e5e8 !important; border-color: rgba(201,122,106,0.4); }
+  #km-toolkit-root .km-card p{ font-size: 14.5px; color: var(--km-gray) !important; margin: 0 0 12px; flex-grow:1; }
+  #km-toolkit-root .km-card .km-why{
+    font-size: 13px; color: var(--km-cream) !important;
+    border-top: 1px solid var(--km-panel-line); padding-top: 10px; margin-top: auto;
+  }
+  #km-toolkit-root .km-card .km-why span{ color: var(--km-gold) !important; font-weight: 600; }
+
+  #km-toolkit-root .km-category-heading{
+    font-family:'Fraunces', Georgia, serif !important;
+    font-size: 15px; color: var(--km-gold) !important;
+    margin: 44px 0 16px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--km-panel-line);
+  }
+  #km-toolkit-root .km-category-heading:first-of-type{ margin-top: 0; }
+
+  #km-toolkit-root .km-empty-state{ text-align:center; color: var(--km-gray) !important; padding: 40px 0; display:none; }
+
+  #km-toolkit-root .km-footer{
+    text-align:center; margin-top: 70px; padding-top: 30px;
+    border-top: 1px solid var(--km-panel-line);
+    color: var(--km-gray) !important; font-size: 14px;
+  }
+  #km-toolkit-root .km-footer a{ color: var(--km-gold) !important; }
+  #km-toolkit-root .km-footer a:hover{ text-decoration:underline; }
+
+  @media (max-width: 620px){
+    #km-toolkit-root .km-grid{ grid-template-columns: 1fr; }
+    #km-toolkit-root{ padding: 40px 16px 60px; }
+  }
+
+  /* KINETIC MINDSET THEME INTEGRATION
+     This page keeps its original content/functionality while matching
+     the main site's navy + cyan + gold visual system. */
+  body{background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),#080d18!important;color:#e8edf5!important;}
+  a{color:#72e5e8;}
+</style>
+<div class="km-hero">
+<div class="km-kicker">The Kinetic Mindset Reader's Toolkit</div>
+<h1>Tools worth actually using.</h1>
+<p>Not a resource dump. Just the handful of apps that show up when you try to run the book's four pillars in real life — filter by pillar or search for what you need.</p>
+<div class="km-honesty"><strong>No affiliate links. No sponsorships.</strong> Some of these have free tiers that are genuinely enough — that's noted below.</div>
+</div>
+<div class="km-controls" id="km-controls">
+<button class="km-pill active" data-filter="all">All Tools</button>
+<button class="km-pill" data-filter="mindset">Mindset</button>
+<button class="km-pill" data-filter="habits">Habit Automation</button>
+<button class="km-pill" data-filter="money">Wealth Systems</button>
+<button class="km-pill" data-filter="time">Time &amp; Leverage</button>
+<div class="km-search">
+<input id="km-search" placeholder="Search tools (e.g. budget, journal, focus)…" type="text"/>
+</div>
+</div>
+<div id="km-results">
+<div class="km-category-heading" data-cat-heading="mindset">Mindset &amp; The Subconscious Engine</div>
+<div class="km-grid" data-cat="mindset"></div>
+<div class="km-category-heading" data-cat-heading="habits">Habit Automation</div>
+<div class="km-grid" data-cat="habits"></div>
+<div class="km-category-heading" data-cat-heading="money">Wealth Defense &amp; Systematic Offense</div>
+<div class="km-grid" data-cat="money"></div>
+<div class="km-category-heading" data-cat-heading="time">The Lifestyle Lever</div>
+<div class="km-grid" data-cat="time"></div>
+</div>
+<div class="km-empty-state" id="km-empty-state">No tools match that search. Try a different word, or clear the filter above.</div>
+<div class="km-footer">
+    Tools change faster than books do — if something here is discontinued, look for a category, not the brand name.
+    <br/><a href="https://thekineticmindset.blogspot.com">Back to The Kinetic Mindset →</a>
+</div>
+</div>
+</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body></html>

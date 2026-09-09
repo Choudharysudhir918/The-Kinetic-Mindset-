@@ -1,0 +1,221 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chapter 5: The Offense - Sample Chapter | The Kinetic Mindset</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap');
+
+   :root{
+    --cream:#080d18;
+    --paper:#131b2d;
+    --ink:#f7f7f4;
+    --ink-soft:#aab4c7;
+    --accent:#72e5e8;
+    --accent-deep:#72e5e8;
+    --line:rgba(255,255,255,.11);
+    --rust:#d8b15a;
+    --max:780px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:radial-gradient(circle at 80% 0%,rgba(114,229,232,.08),transparent 34%),#080d18;
+    color:#f7f7f4;
+    font-family:'Inter',sans-serif;
+    line-height:1.65;
+  }
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  a{color:#72e5e8;}
+
+  .chapter-head{
+    padding:70px 24px 44px;
+    border-bottom:1px solid var(--line);
+  }
+  .breadcrumb{font-size:13.5px;color:var(--ink-soft);margin-bottom:20px;}
+  .breadcrumb a{text-decoration:none;}
+  .part-label{font-size:13px;font-weight:600;color:#72e5e8;margin-bottom:14px;}
+  .chapter-head h1{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:clamp(32px,5vw,48px);line-height:1.1;margin:0 0 12px;
+  }
+  .chapter-sub{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:19px;color:var(--ink-soft);margin-bottom:18px;
+  }
+  .source-tag{
+    display:inline-block;font-size:13.5px;color:var(--ink-soft);
+    border:1px solid var(--line);padding:6px 14px;border-radius:20px;
+  }
+
+  .section{padding:44px 24px;}
+  .section h2{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:26px;margin:0 0 18px;
+  }
+  .section p{font-size:16.5px;color:var(--ink-soft);max-width:64ch;margin:0 0 16px;}
+  .section p:last-child{margin-bottom:0;}
+  .section p.lead::first-letter{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:52px;float:left;line-height:0.75;
+    padding-right:8px;padding-top:4px;color:#72e5e8;
+  }
+
+  blockquote{
+    margin:28px 0;padding:22px 26px;
+    background:rgba(19,27,45,.86);border:1px solid var(--line);
+    border-left:4px solid var(--accent);border-radius:12px;
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:19px;line-height:1.5;max-width:60ch;
+  }
+  blockquote cite{display:block;font-style:normal;font-size:14px;color:#72e5e8;margin-top:10px;}
+
+  .passage-block{margin-bottom:26px;}
+  .passage-block h3{
+    font-family:'Playfair Display',serif;font-weight:600;
+    font-size:19px;margin:0 0 8px;color:#f7f7f4;
+  }
+
+  .mistake-box{
+    background:rgba(19,27,45,.86);border:1px solid var(--line);
+    border-radius:12px;padding:22px 26px;margin-top:8px;
+  }
+  .mistake-box .tag{font-size:12px;font-weight:600;color:var(--rust);margin-bottom:8px;}
+  .mistake-box p{margin-bottom:0;}
+
+  .full-chapter{background:rgba(19,27,45,.86);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .full-list{list-style:none;padding:0;margin:0;max-width:60ch;}
+  .full-list li{
+    padding:14px 0;border-bottom:1px solid var(--line);
+    font-size:15.5px;color:var(--ink-soft);display:flex;gap:12px;
+  }
+  .full-list li:last-child{border-bottom:none;}
+  .full-list .check{color:#72e5e8;font-weight:700;flex-shrink:0;}
+  .full-list b{color:#f7f7f4;}
+
+  .buy-box{padding:56px 24px 70px;text-align:center;}
+  .buy-card{
+    background:linear-gradient(135deg,#101a2d,#0b1220);color:#f7f7f4;border-radius:8px;
+    padding:44px 32px;max-width:560px;margin:0 auto;
+  }
+  .buy-card h2{font-family:'Playfair Display',serif;font-size:26px;margin:0 0 12px;color:#f7f7f4;}
+  .buy-card p{font-size:15.5px;color:#aab4c7;max-width:48ch;margin:0 auto 26px;}
+  .buy-btn{
+    display:inline-block;background:linear-gradient(135deg,#d8b15a,#f0d486);color:#080d18;
+    font-weight:700;font-size:15px;padding:14px 32px;border-radius:12px;text-decoration:none;
+  }
+  .buy-note{margin-top:16px;font-size:13px;color:#7f8ba2;}
+
+  .chapter-nav{
+    padding:40px 24px 80px;
+    display:flex;justify-content:space-between;
+    max-width:var(--max);margin:0 auto;
+    font-size:15px;
+  }
+  .chapter-nav a{text-decoration:none;color:var(--ink-soft);}
+  .chapter-nav a:hover{color:#72e5e8;}
+
+  /* KINETIC MINDSET THEME INTEGRATION
+     Chapter 5 keeps its original content and structure while matching
+     the main site's navy + cyan + gold visual system. */
+  body{min-height:100vh;}
+  .chapter-head{
+    background:linear-gradient(180deg,rgba(8,13,24,.96),rgba(8,13,24,.72));
+    box-shadow:0 18px 60px rgba(0,0,0,.22);
+  }
+  .chapter-head h1{letter-spacing:-.02em;text-shadow:0 0 30px rgba(114,229,232,.08);}
+  .source-tag{background:rgba(114,229,232,.04);}
+  blockquote{box-shadow:0 18px 45px rgba(0,0,0,.16);}
+  .mistake-box{box-shadow:0 18px 45px rgba(0,0,0,.14);}
+  .full-chapter{background:rgba(19,27,45,.62);}
+  .buy-card{border:1px solid rgba(255,255,255,.10);box-shadow:0 25px 70px rgba(0,0,0,.28);}
+  .buy-btn{transition:transform .2s ease,box-shadow .2s ease;}
+  .buy-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(216,177,90,.22);}
+  .chapter-nav a{transition:color .2s ease,transform .2s ease;}
+  .chapter-nav a:hover{transform:translateY(-1px);}
+  @media(max-width:640px){
+    .chapter-head{padding-top:48px;}
+    .section{padding-top:34px;padding-bottom:34px;}
+    .chapter-nav{gap:18px;flex-wrap:wrap;}
+    .chapter-nav a:last-child{margin-left:auto;}
+  }
+
+</style>
+<link href="../css/style.css" rel="stylesheet"/></head>
+<body><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style="">
+<div class="chapter-head">
+<div class="container">
+<div class="breadcrumb"><a href="../index.html">The Kinetic Mindset</a>  /  Chapter 5</div>
+<div class="part-label">PART II | THE FINANCIAL ENGINE  |  SAMPLE CHAPTER</div>
+<h1>The Offense</h1>
+<div class="chapter-sub">Methodical, Defensive Wealth-Building</div>
+<div class="source-tag">Master Reference: The Intelligent Investor by Benjamin Graham</div>
+</div>
+</div>
+<div class="section">
+<div class="container">
+<h2>Why This Chapter Is Called “The Offense” but Reads Like Defense</h2>
+<p class="lead">Chapter 4 gave you the target: build an asset column instead of a pile of liabilities. This chapter is where you learn to put capital into that column without accidentally destroying it in the process.</p>
+<p>Benjamin Graham's The Intelligent Investor is widely considered the single most important book ever written on investing - not because it promises the highest returns, but because it teaches the discipline required to avoid the catastrophic mistakes that destroy most amateur investors' results.</p>
+</div>
+</div>
+<div class="section">
+<div class="container">
+<h2>The Core Idea: Investing vs. Speculating</h2>
+<p>Graham's definition distinguishes investing from speculating by process, not asset class: thorough analysis, safety of principal, and an adequate - not maximum - return.</p>
+<blockquote>An investment operation is one which, upon thorough analysis, promises safety of principal and an adequate return. Operations not meeting these requirements are speculative.<cite>- Benjamin Graham</cite></blockquote>
+<p>A stock purchased after genuine research, at a price with a margin for error, held with a plan, is an investment. The same stock purchased because a friend mentioned it was 'about to take off' is speculation - regardless of how it turns out.</p>
+</div>
+</div>
+<div class="section">
+<div class="container">
+<h2>A Key Passage, Explained</h2>
+<div class="passage-block">
+<h3>“Mr. Market is there to serve you, not to guide you.”</h3>
+<p>Graham's allegorical business partner offers a new price every day, driven entirely by mood - euphoric one day, despondent the next. The daily price the market quotes is Mr. Market's mood, not a verdict on the business's actual value. Most amateur investors let his mood dictate their own judgment; the intelligent investor uses his mood swings instead.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="container">
+<h2>A Common Mistake</h2>
+<div class="mistake-box">
+<div class="tag">MISTAKE: “GRAHAM TEACHES YOU TO PREDICT THE MARKET”</div>
+<p>Graham never claims to know where prices will go tomorrow, next month, or next year. His entire framework is built around the opposite premise - that short-term price movement is unpredictable, which is exactly why margin of safety and a long time horizon matter so much.</p>
+</div>
+</div>
+</div>
+<div class="section full-chapter">
+<div class="container">
+<h2>What's in the Full Chapter</h2>
+<p style="margin-bottom:20px;">This sample covers the core idea and one key passage. The complete chapter also includes:</p>
+<ul class="full-list">
+<li><span class="check">+</span><span>The full explanation of <b>margin of safety</b>, and how it functions as the central concept of investing</span></li>
+<li><span class="check">+</span><span><b>Defensive versus enterprising investor</b> profiles, and how to honestly choose between them</span></li>
+<li><span class="check">+</span><span>Two more key passages, including 'the investor's chief problem is likely to be himself'</span></li>
+<li><span class="check">+</span><span>A full <b>case study</b> contrasting two investors through the identical market downturn, one with a written plan and one without</span></li>
+<li><span class="check">+</span><span>The complete <b>six-step application framework</b>, from choosing your investor type to setting a maximum position size rule</span></li>
+<li><span class="check">+</span><span>A <b>30-day tracker</b>, common obstacles, and the direct link into Chapter 6's people-focused work</span></li>
+</ul>
+</div>
+</div>
+<div class="buy-box">
+<div class="buy-card">
+<h2>Get the full system</h2>
+<p>Ten chapters, one book each. The Kinetic Mindset takes ten of the most important books ever written on mindset, money, and meaning, and arranges them into a single sequence - where each chapter closes the exact gap the one before it opens.</p>
+<a class="buy-btn" href="../index.html">Get the Book</a>
+<div class="buy-note">Available as [format] - update this line with your actual price and link</div>
+</div>
+</div>
+<div class="chapter-nav">
+<a href="chapter-4.html">← Chapter 4</a>
+<a href="../index.html">Back to all chapters</a>
+<a href="chapter-6.html">Chapter 6 →</a>
+</div>
+</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body>
+</html>

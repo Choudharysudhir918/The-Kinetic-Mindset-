@@ -1,0 +1,138 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chapter 7: The Filter - Sample Chapter | The Kinetic Mindset</title>
+<meta content="Chapter 7 of The Kinetic Mindset: The Filter — eliminating noise and executing ruthlessly, with Deep Work by Cal Newport as the master reference." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#080d18; --paper:#131b2d; --ink:#f7f7f4; --ink-soft:#aab4c7;
+  --accent:#72e5e8; --accent-deep:#72e5e8; --line:rgba(255,255,255,.11);
+  --rust:#d8b15a; --max:780px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:
+  radial-gradient(circle at 82% 8%,rgba(114,229,232,.09),transparent 28%),
+  radial-gradient(circle at 12% 92%,rgba(216,177,90,.06),transparent 24%),var(--cream);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;transition:.2s ease}
+a:hover{color:#a7f5f6}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+.chapter-head{padding:88px 0 72px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.chapter-head:before{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(114,229,232,.12);border-radius:50%;right:-170px;top:-150px;box-shadow:0 0 80px rgba(114,229,232,.08)}
+.chapter-head:after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(216,177,90,.12);border-radius:50%;right:-100px;top:-80px}
+.breadcrumb{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:28px}
+.part-label{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--accent);margin-bottom:18px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--ink);line-height:1.2}
+h1{font-size:clamp(46px,8vw,76px);margin:0 0 12px;letter-spacing:-.03em}
+.chapter-sub{font-size:20px;color:var(--ink-soft);margin-bottom:22px}
+.source-tag{display:inline-block;border:1px solid rgba(216,177,90,.35);background:rgba(216,177,90,.07);color:#f0d486;padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.04em}
+.section{padding:58px 0;border-bottom:1px solid var(--line)}
+h2{font-size:32px;margin:0 0 22px;letter-spacing:-.015em}
+p{font-size:16.5px;color:var(--ink-soft);margin:0 0 20px}
+p.lead{font-size:20px;line-height:1.65;color:#dfe6f0}
+blockquote{margin:30px 0;padding:24px 26px;border-left:3px solid var(--rust);background:rgba(19,27,45,.82);border-radius:0 14px 14px 0;color:#eef2f7;font-family:"Playfair Display",Georgia,serif;font-size:21px;line-height:1.55;box-shadow:0 18px 50px rgba(0,0,0,.16)}
+blockquote cite{display:block;margin-top:12px;color:#d8b15a;font:600 12px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;font-style:normal}
+.passage-block{padding:30px;background:linear-gradient(145deg,rgba(19,27,45,.94),rgba(11,18,32,.9));border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.18)}
+.passage-block h3{font-size:25px;margin:0 0 16px;color:#f0d486}
+.mistake-box{padding:26px;background:rgba(114,229,232,.055);border:1px solid rgba(114,229,232,.18);border-left:4px solid var(--accent);border-radius:12px}
+.mistake-box .tag{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}
+.full-chapter{background:linear-gradient(180deg,rgba(255,255,255,.012),transparent)}
+.full-list{list-style:none;padding:0;margin:0}
+.full-list li{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid var(--line);color:var(--ink-soft);font-size:15.5px}
+.full-list li:last-child{border-bottom:0}
+.full-list b{color:var(--ink)}
+.check{flex:0 0 24px;width:24px;height:24px;border:1px solid rgba(216,177,90,.45);border-radius:50%;display:grid;place-items:center;color:#f0d486;font-weight:800;margin-top:1px}
+.buy-box{padding:64px 24px 76px;text-align:center}
+.buy-card{background:linear-gradient(145deg,#101a2d,#0b1220);color:var(--ink);border:1px solid rgba(255,255,255,.11);border-radius:20px;padding:48px 32px;max-width:600px;margin:0 auto;box-shadow:0 25px 80px rgba(0,0,0,.28)}
+.buy-card h2{font-size:30px;margin:0 0 12px}
+.buy-card p{font-size:15.5px;max-width:48ch;margin:0 auto 28px;color:#aab4c7}
+.buy-btn{display:inline-block;background:linear-gradient(135deg,#d8b15a,#f0d486);color:#10141d;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 30px;border-radius:999px;box-shadow:0 10px 30px rgba(216,177,90,.18)}
+.buy-btn:hover{color:#080d18;transform:translateY(-2px);box-shadow:0 14px 36px rgba(216,177,90,.25)}
+.buy-note{margin-top:16px;font-size:12px;color:#7f8ba0}
+.chapter-nav{padding:40px 24px 80px;display:flex;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;font-size:14px}
+.chapter-nav a{color:var(--ink-soft)}
+.chapter-nav a:hover{color:var(--accent)}
+@media(max-width:620px){
+ .chapter-head{padding:64px 0 54px}.container{padding:0 20px}.chapter-sub{font-size:17px}.source-tag{line-height:1.5}.section{padding:46px 0}h2{font-size:27px}p{font-size:16px}.lead{font-size:18px!important}blockquote{font-size:19px;padding:20px}.passage-block{padding:22px}.buy-card{padding:38px 22px}.chapter-nav{padding-left:20px;padding-right:20px;flex-direction:column;text-align:center}.chapter-nav a{padding:5px}
+}
+</style>
+<link href="../css/style.css" rel="stylesheet"/></head>
+<body><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style="">
+<div class="chapter-head">
+<div class="container">
+<div class="breadcrumb"><a href="../index.html">The Kinetic Mindset</a>  /  Chapter 7</div>
+<div class="part-label">PART III | SCALING OUTWARD  |  SAMPLE CHAPTER</div>
+<h1>The Filter</h1>
+<div class="chapter-sub">Elimiting Noise and Executing Ruthlessly</div>
+<div class="source-tag">Master Reference: Deep Work by Cal Newport</div>
+</div>
+</div>
+<div class="section"><div class="container">
+<h2>Why This Chapter Follows the People Chapter</h2>
+<p class="lead">The first five chapters built the internal operating system and financial engine. Chapter 6 added the human variable — your network, relationships, and ability to work through other people. But a larger network also creates a larger stream of requests, messages, meetings, interruptions, and opportunities competing for your attention.</p>
+<p>Without a filter, the very network that increases your leverage can quietly consume the attention required to use that leverage. Chapter 7 is about protecting the scarce resource underneath everything else: your ability to concentrate on work that matters.</p>
+<p>Cal Newport's <i>Deep Work</i> provides the operating model. Its premise is simple: the ability to focus without distraction on cognitively demanding work is becoming increasingly valuable precisely because it is increasingly rare.</p>
+</div></div>
+<div class="section"><div class="container">
+<h2>The Core Idea: Deep Work vs. Shallow Work</h2>
+<p>Deep work is the kind of concentration that produces new value, improves your skill, and pushes difficult problems forward. Shallow work is logistical, reactive, and often necessary — but it can expand endlessly if you do not deliberately contain it.</p>
+<blockquote>Deep work is the ability to focus without distraction on a cognitively demanding task. It's a skill that allows you to quickly master complicated information and produce better results in less time.<cite>— Cal Newport</cite></blockquote>
+<p>The distinction is not between “important work” and “unimportant work.” Email can be important. Meetings can be important. Administration can be important. The distinction is whether the task demands sustained, undistracted cognitive effort — and whether you are deliberately protecting the conditions that make that effort possible.</p>
+</div></div>
+<div class="section"><div class="container">
+<h2>A Key Passage, Explained</h2>
+<div class="passage-block">
+<h3>“Clarity about what matters provides clarity about what does not.”</h3>
+<p>The filter begins before the distraction arrives. If you have not decided what matters, everything can make a legitimate claim on your attention. Once the important work is defined, the rest becomes easier to classify: schedule it, delegate it, batch it, reduce it, or decline it.</p>
+<p>This connects directly back to Chapter 1. A clear internal paradigm makes better decisions possible; a clear definition of what matters turns that paradigm into a practical attention policy.</p>
+</div>
+</div></div>
+<div class="section"><div class="container">
+<h2>A Common Mistake</h2>
+<div class="mistake-box">
+<div class="tag">MISTAKE: “THIS MEANS NEVER CHECKING EMAIL OR ATTENDING MEETINGS”</div>
+<p>Newport is not arguing that every shallow task should disappear. Real work contains logistics, collaboration, communication, and maintenance. The point is to stop allowing shallow work to expand until it crowds out the deep work that creates the highest-value results.</p>
+<p>The filter is therefore a system, not an escape from responsibility: protect deliberate blocks for depth, then give shallow work boundaries of its own.</p>
+</div>
+</div></div>
+<div class="section full-chapter"><div class="container">
+<h2>What's in the Full Chapter</h2>
+<p style="margin-bottom:20px;">This sample covers the core idea and one key passage. The complete chapter also includes:</p>
+<ul class="full-list">
+<li><span class="check">+</span><span>The <b>four philosophies for scheduling deep work</b>: monastic, bimodal, rhythmic, and journalistic</span></li>
+<li><span class="check">+</span><span>Newport's <b>four core rules</b> — work deeply, embrace boredom, quit social media, and drain the shallows</span></li>
+<li><span class="check">+</span><span>Two more key passages, including the argument that <b>a deep life is a good life</b></span></li>
+<li><span class="check">+</span><span>A closer look at the <b>attention economy</b> and why constant digital availability fragments productive attention</span></li>
+<li><span class="check">+</span><span>A <b>case study</b> comparing identical workloads handled by one reactive worker and one person operating with a protected rhythmic schedule</span></li>
+<li><span class="check">+</span><span>A <b>five-step application framework</b> for establishing your first protected daily deep-work block</span></li>
+<li><span class="check">+</span><span>A <b>30-day tracker</b>, common obstacles, and the direct link into Chapter 8's resilience work</span></li>
+</ul>
+</div></div>
+<div class="buy-box">
+<div class="buy-card">
+<h2>Get the full system</h2>
+<p>Ten chapters, one book each. The Kinetic Mindset takes ten of the most important books ever written on mindset, money, and meaning, and arranges them into a single sequence — where each chapter closes the exact gap the one before it opens.</p>
+<a class="buy-btn" href="../index.html">Get the Book</a>
+<div class="buy-note">Available as [format] - update this line with your actual price and link</div>
+</div>
+</div>
+<div class="chapter-nav">
+<a href="chapter-6.html">← Chapter 6</a>
+<a href="../index.html">Back to all chapters</a>
+<a href="chapter-8.html">Chapter 8 →</a>
+</div>
+</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body>
+</html>

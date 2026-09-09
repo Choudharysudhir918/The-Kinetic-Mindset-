@@ -1,0 +1,73 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chapter 4: The Defense - Sample Chapter | The Kinetic Mindset</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap');
+:root{--navy:#080d18;--panel:#131b2d;--panel2:#101727;--text:#f7f7f4;--muted:#aab4c7;--cyan:#72e5e8;--gold:#d8b15a;--gold2:#f0d486;--line:rgba(255,255,255,.11);--max:700px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(114,229,232,.08),transparent 32%),var(--navy);color:var(--text);font-family:Inter,sans-serif;line-height:1.65}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+a{color:var(--cyan)}
+.chapter-head{padding:90px 24px 48px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.chapter-head:before{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(114,229,232,.12);border-radius:50%;right:-190px;top:-210px;box-shadow:0 0 80px rgba(114,229,232,.08)}
+.breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px}.breadcrumb a{text-decoration:none}
+.part-label{font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--gold);margin-bottom:15px}
+.chapter-head h1{font-family:'Source Serif 4',serif;font-weight:700;font-size:clamp(36px,6vw,54px);line-height:1.08;margin:0 0 12px}
+.chapter-sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:20px;color:var(--muted);margin-bottom:20px}
+.source-tag{display:inline-block;font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.025);padding:7px 14px;border-radius:999px}
+.section{padding:48px 24px}.section h2{font-family:'Source Serif 4',serif;font-weight:700;font-size:28px;line-height:1.2;margin:0 0 18px}.section p{font-size:16.5px;color:var(--muted);max-width:64ch;margin:0 0 17px}.section p:last-child{margin-bottom:0}
+.section p.lead::first-letter{font-family:'Source Serif 4',serif;font-weight:700;font-size:54px;float:left;line-height:.75;padding-right:9px;padding-top:5px;color:var(--cyan)}
+blockquote{margin:30px 0;padding:24px 26px;background:linear-gradient(135deg,rgba(114,229,232,.06),rgba(216,177,90,.05));border:1px solid var(--line);border-left:4px solid var(--cyan);border-radius:12px;font-family:'Source Serif 4',serif;font-style:italic;font-size:20px;line-height:1.5;max-width:60ch;box-shadow:0 14px 45px rgba(0,0,0,.18)}
+blockquote cite{display:block;font-family:Inter,sans-serif;font-style:normal;font-size:13px;color:var(--gold);margin-top:12px}
+.passage-block{margin-bottom:26px;padding:24px;border:1px solid var(--line);border-radius:12px;background:rgba(19,27,45,.72)}
+.passage-block h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:20px;line-height:1.35;margin:0 0 10px;color:var(--text)}
+.mistake-box{background:rgba(19,27,45,.8);border:1px solid rgba(114,229,232,.18);border-radius:12px;padding:24px 26px;margin-top:8px;box-shadow:0 15px 45px rgba(0,0,0,.16)}
+.mistake-box .tag{font-size:11.5px;letter-spacing:.06em;font-weight:700;color:var(--cyan);margin-bottom:9px}.mistake-box p{margin-bottom:0}
+.full-chapter{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.full-list{list-style:none;padding:0;margin:0;max-width:60ch}.full-list li{padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--muted);display:flex;gap:13px}.full-list li:last-child{border-bottom:none}.full-list .check{color:var(--gold);font-weight:700;flex-shrink:0}.full-list b{color:var(--text)}
+.buy-box{padding:60px 24px 74px;text-align:center}.buy-card{position:relative;overflow:hidden;background:linear-gradient(145deg,#131b2d,#0d1423);border:1px solid rgba(216,177,90,.25);border-radius:16px;padding:46px 32px;max-width:560px;margin:0 auto;box-shadow:0 25px 70px rgba(0,0,0,.28)}.buy-card:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(114,229,232,.12);border-radius:50%;right:-90px;top:-90px}.buy-card h2{font-family:'Source Serif 4',serif;font-size:28px;margin:0 0 12px;color:var(--text)}.buy-card p{font-size:15.5px;color:var(--muted);max-width:48ch;margin:0 auto 27px}.buy-btn{display:inline-block;background:var(--gold);color:#080d18;font-weight:800;font-size:14px;letter-spacing:.03em;padding:14px 32px;border-radius:999px;text-decoration:none;transition:.2s}.buy-btn:hover{background:var(--gold2);transform:translateY(-2px)}.buy-note{margin-top:16px;font-size:12.5px;color:#7f8ba0}
+.chapter-nav{padding:40px 24px 80px;display:flex;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;font-size:14.5px}.chapter-nav a{text-decoration:none;color:var(--muted);transition:.2s}.chapter-nav a:hover{color:var(--cyan)}
+@media(max-width:620px){.chapter-head{padding-top:60px}.section{padding:38px 20px}.chapter-nav{padding-left:20px;padding-right:20px;flex-wrap:wrap}.chapter-nav a:last-child{margin-left:auto}}
+</style>
+<link href="../css/style.css" rel="stylesheet"/></head>
+<body><div class="km-shell"><header class="km-header"><div class="km-nav"><a class="km-brand" href="../index.html"><span class="km-logo">K</span><span>THE KINETIC MINDSET</span></a><button aria-label="Open menu" class="km-menu">☰</button><nav class="km-links"><a href="../index.html">Home</a><a href="../index.html#book">The Book</a><a href="../index.html#chapters">Chapters</a><a href="../index.html#tools">Tools</a><a href="../index.html#author">Author</a></nav></div></header><div class="km-progress"></div><main class="km-main km-content" style="">
+<div class="chapter-head"><div class="container">
+<div class="breadcrumb"><a href="../index.html">The Kinetic Mindset</a>  /  Chapter 4</div>
+<div class="part-label">PART II | THE FINANCIAL ENGINE  |  SAMPLE CHAPTER</div>
+<h1>The Defense</h1><div class="chapter-sub">Shifting from a Consumer Mindset to an Asset Collector</div>
+<div class="source-tag">Master Reference: Rich Dad Poor Dad by Robert Kiyosaki</div>
+</div></div>
+<div class="section"><div class="container"><h2>Why This Chapter Comes Right After the Inner Work</h2>
+<p class="lead">The first three chapters were entirely internal. This is the first chapter that asks you to actually do something with money, and it's deliberately positioned here rather than earlier, because the internal work changes how this chapter's ideas land.</p>
+<p>Robert Kiyosaki's Rich Dad Poor Dad has sold more than 40 million copies and remains the most widely read personal finance book of the last three decades - not because its technical content is the most sophisticated available, but because it changes how the reader sees money before it ever gets to specifics.</p></div></div>
+<div class="section"><div class="container"><h2>The Core Idea: Assets Feed You, Liabilities Feed On You</h2>
+<p>An asset, in Kiyosaki's definition, is anything that puts money in your pocket whether or not you personally show up to work. A liability is anything that takes money out of your pocket, regardless of what it's called or how good it looks.</p>
+<blockquote>The rich buy assets. The poor and middle class buy liabilities that they think are assets.<cite>- Robert Kiyosaki</cite></blockquote>
+<p>This reframe dismantles a lot of conventional financial common sense. A house you live in is very often a liability under this definition - it takes money out every month and doesn't put money back in unless you're renting part of it or eventually sell for a gain.</p></div></div>
+<div class="section"><div class="container"><h2>A Key Passage, Explained</h2><div class="passage-block"><h3>“It's not how much money you make. It's how much money you keep.”</h3>
+<p>A high income with no habit of directing a portion of it toward assets produces the same long-term outcome as a modest income with a consistent asset-buying habit - often worse, because higher earners tend to face more lifestyle pressure to spend at the edge of their means.</p></div></div></div>
+<div class="section"><div class="container"><h2>A Common Mistake</h2><div class="mistake-box"><div class="tag">MISTAKE: “THIS BOOK SAYS QUIT YOUR JOB”</div>
+<p>Kiyosaki's own criticism of the traditional path is aimed at treating a job as the entire financial strategy for life, not at having a job at all. Most of his own early asset purchases were funded by W-2 income from conventional employment.</p></div></div></div>
+<div class="section full-chapter"><div class="container"><h2>What's in the Full Chapter</h2><p style="margin-bottom:20px;">This sample covers the core idea and one key passage. The complete chapter also includes:</p>
+<ul class="full-list">
+<li><span class="check">+</span><span>The full <b>cash-flow patterns</b> of rich, poor, and middle class, and Kiyosaki's three income types: earned, portfolio, passive</span></li>
+<li><span class="check">+</span><span><b>Good debt versus bad debt</b>, and the specific caution around leverage in inexperienced hands</span></li>
+<li><span class="check">+</span><span>Two more key passages and two more common mistakes, including the 'owning a home is always bad' confusion</span></li>
+<li><span class="check">+</span><span>A full <b>case study</b> on two people receiving an identical $10,000 bonus and directing it in opposite directions</span></li>
+<li><span class="check">+</span><span>The complete <b>five-step application framework</b> for building your actual asset column, on paper, this week</span></li>
+<li><span class="check">+</span><span>A <b>30-day tracker</b>, common obstacles, and the direct link into Chapter 5's investing method</span></li>
+</ul></div></div>
+<div class="buy-box"><div class="buy-card"><h2>Get the full system</h2>
+<p>Ten chapters, one book each. The Kinetic Mindset takes ten of the most important books ever written on mindset, money, and meaning, and arranges them into a single sequence - where each chapter closes the exact gap the one before it opens.</p>
+<a class="buy-btn" href="../index.html">Get the Book</a>
+<div class="buy-note">Available as [format] - update this line with your actual price and link</div></div></div>
+<div class="chapter-nav"><a href="chapter-3.html">← Chapter 3</a><a href="../index.html">Back to all chapters</a><a href="chapter-5.html">Chapter 5 →</a></div>
+</main><footer class="km-footer"><div class="km-footer-inner"><span>© 2026 Sudhir Panghaal · The Kinetic Mindset</span><span>Think differently. Build deliberately. Keep moving.</span></div></footer></div><script src="../js/main.js"></script></body></html>
