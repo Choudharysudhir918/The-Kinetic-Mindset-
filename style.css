@@ -5,3 +5,92 @@
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:900px){.km-hero,.km-split,.km-author{grid-template-columns:1fr}.km-grid{grid-template-columns:repeat(2,1fr)}.km-chapters{grid-template-columns:repeat(2,1fr)}.km-cover-wrap{min-height:430px}.km-links{display:none}.km-menu{display:block}.km-links.open{display:flex;position:absolute;left:15px;right:15px;top:73px;flex-direction:column;align-items:stretch;padding:14px;background:rgba(8,13,24,.98);border:1px solid var(--line);border-radius:16px}.km-links.open a{padding:8px 10px}.km-main{padding:0 18px}}
 @media(max-width:560px){.km-hero{padding-top:58px}.km-grid{grid-template-columns:1fr}.km-chapters{grid-template-columns:1fr 1fr}.km-cover-wrap{min-height:360px}.km-orbit{width:330px;height:330px}.km-section{padding:52px 0}.km-footer-inner{flex-direction:column}}
+
+
+/* ================================================================
+   KINETIC MINDSET — UNIVERSAL PAGE CONSISTENCY FIXES
+   These rules sit last on purpose. They normalize legacy standalone
+   page components into the main navy + cyan + gold visual system.
+   ================================================================ */
+.km-page{background:radial-gradient(circle at 80% 0%,rgba(114,229,232,.07),transparent 30%),var(--bg)!important;color:var(--text)!important;overflow-x:hidden}
+.km-page main,.km-page .km-page-shell{background:transparent!important;color:var(--text)!important}
+.km-page h1,.km-page h2,.km-page h3,.km-page h4{color:var(--text)!important;line-height:1.12;letter-spacing:-.025em}
+.km-page p,.km-page li,.km-page label,.km-page .sub,.km-page .lead{color:var(--muted)!important}
+.km-page a{color:var(--cyan)}
+.km-page input,.km-page textarea,.km-page select{background:var(--panel2)!important;color:var(--text)!important;border:1px solid var(--line)!important;border-radius:10px}
+.km-page input::placeholder,.km-page textarea::placeholder{color:#7f8aa0!important}
+.km-page button{font-family:inherit}
+
+/* Chapter pages */
+.km-page .chapter-head,.km-page .section,.km-page .buy-box{background:transparent!important;border-color:var(--line)!important}
+.km-page .chapter-head{padding:72px 24px 46px}
+.km-page .container,.km-page .km2-container{max-width:760px}
+.km-page .chapter-head h1{font-family:'Playfair Display',serif!important;font-size:clamp(46px,7vw,78px);margin:12px 0 16px}
+.km-page .chapter-sub{color:var(--muted)!important;font-family:'Playfair Display',serif!important}
+.km-page .source-tag{border-color:var(--line)!important;color:var(--muted)!important;background:rgba(255,255,255,.02)}
+.km-page .section h2{font-family:'Playfair Display',serif!important;font-size:clamp(28px,4vw,42px);margin:0 0 18px}
+.km-page .section p{color:var(--muted)!important}
+.km-page blockquote{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015))!important;color:var(--text)!important;border:1px solid var(--line)!important;border-left:4px solid var(--gold)!important;border-radius:16px!important;box-shadow:none!important}
+.km-page blockquote cite{color:var(--gold2)!important}
+.km-page .mistake-box,.km-page .full-chapter{background:var(--panel)!important;border-color:var(--line)!important;border-radius:16px!important}
+.km-page .mistake-box p,.km-page .full-list li{color:var(--muted)!important}
+.km-page .full-list b,.km-page .passage-block h3{color:var(--text)!important}
+.km-page .buy-card{background:linear-gradient(145deg,#111a2b,#0b1220)!important;color:var(--text)!important;border:1px solid rgba(216,177,90,.25)!important;border-radius:20px!important;box-shadow:var(--shadow)!important}
+.km-page .buy-card h2,.km-page .buy-card strong{color:var(--text)!important}
+.km-page .buy-card p{color:var(--muted)!important}
+.km-page .buy-btn{background:var(--gold)!important;color:#11151c!important;border-radius:999px!important}
+.km-page .buy-note{color:var(--muted)!important}
+.km-page .chapter-nav{max-width:760px}
+.km-page .chapter-nav a{color:var(--cyan)!important}
+
+/* Decision Room */
+.km-page .wrap{max-width:1040px!important;padding:50px 22px 80px!important;background:transparent!important}
+.km-page .hero{background:transparent!important;border-color:var(--line)!important;padding:72px 10px 42px!important}
+.km-page .hero h1{font-family:'Playfair Display',serif!important;font-size:clamp(48px,7vw,82px)!important;color:var(--text)!important}
+.km-page .hero p{color:var(--muted)!important;max-width:700px;margin:0 auto}
+.km-page .notice,.km-page .callout{background:rgba(255,255,255,.025)!important;border-color:var(--line)!important;color:var(--muted)!important}
+.km-page .step{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015))!important;border:1px solid var(--line)!important;border-radius:20px!important;box-shadow:var(--shadow)!important;padding:34px!important}
+.km-page .step h2{font-family:'Playfair Display',serif!important}
+.km-page .choice{background:rgba(255,255,255,.025)!important;color:var(--muted)!important;border:1px solid var(--line)!important;border-radius:999px!important}
+.km-page .choice.selected{background:rgba(114,229,232,.10)!important;color:var(--cyan)!important;border-color:rgba(114,229,232,.45)!important}
+.km-page .lens,.km-page .field,.km-page .score-card,.km-page .insight,.km-page .goal,.km-page .answer,.km-page .book{background:var(--panel)!important;color:var(--text)!important;border-color:var(--line)!important}
+.km-page .lens strong,.km-page .field h4,.km-page .book-title,.km-page .score-title{color:var(--text)!important}
+.km-page .lens .source,.km-page .field p,.km-page .book-author,.km-page .book-why{color:var(--muted)!important}
+.km-page .buttons button,.km-page .shuffle-btn,.km-page .next-btn,.km-page .kc-btn,.km-page .kq-btn{background:var(--gold)!important;color:#11151c!important;border-color:var(--gold)!important;border-radius:999px!important}
+.km-page .buttons button.secondary,.km-page .kq-btn-plain{background:transparent!important;color:var(--cyan)!important;border-color:var(--line)!important}
+
+/* Quotes / library / reading-path pages */
+.km-page .featured,.km-page .filters,.km-page .grid{background:transparent!important}
+.km-page .featured-label,.km-page .hero-eyebrow,.km-page .eyebrow,.km-page .section-label{color:var(--gold2)!important}
+.km-page .featured-quote{font-family:'Playfair Display',serif!important;color:var(--text)!important}
+.km-page .featured-attr,.km-page .qattr{color:var(--muted)!important}
+.km-page .featured-attr b{color:var(--gold2)!important}
+.km-page .filter-chip{background:rgba(255,255,255,.025)!important;color:var(--muted)!important;border-color:var(--line)!important;border-radius:999px!important}
+.km-page .filter-chip.active{background:var(--gold)!important;color:#11151c!important;border-color:var(--gold)!important}
+.km-page .qcard{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015))!important;border-color:var(--line)!important;border-radius:18px!important;box-shadow:none!important}
+.km-page .qcard .qtext{color:var(--text)!important;font-family:'Playfair Display',serif!important}
+.km-page .qcard .qattr{color:var(--muted)!important}
+.km-page .qcard.phase-internal .chap-tag,.km-page .qcard.phase-purpose .chap-tag{color:var(--gold2)!important}
+.km-page .qcard.phase-financial .chap-tag,.km-page .qcard.phase-scaling .chap-tag,.km-page .qcard.phase-bonus .chap-tag{color:var(--cyan)!important}
+
+/* Extra legacy pages: eliminate light cards and normalize heading rhythm. */
+.km-page .card,.km-page .chapter-card,.km-page .goal,.km-page .kc-situation-btn,.km-page .kc-result,.km-page .kq-card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015))!important;color:var(--text)!important;border-color:var(--line)!important;border-radius:18px!important}
+.km-page .card strong,.km-page .chapter-title,.km-page .goal-icon,.km-page .kc-chapter-name,.km-page .kq-card h2,.km-page .kq-card h3{color:var(--text)!important}
+.km-page .card span,.km-page .chapter-teaser,.km-page .kc-why,.km-page .kc-guide-list,.km-page .kq-lead{color:var(--muted)!important}
+.km-page .km-category-heading,.km-page .path-title,.km-page .result-label,.km-page .kc-chapter-eyebrow,.km-page .kq-kicker{color:var(--gold2)!important}
+.km-page .km-sitebar{background:rgba(8,13,24,.88)!important;border-color:var(--line)!important}
+.km-page .km-sitebar nav{gap:18px!important}
+.km-page .km-sitebar nav a{color:var(--muted)!important;white-space:nowrap}
+.km-page .km-sitebar nav a:hover{color:var(--cyan)!important}
+.km-page .km-sitebar .brand{color:var(--text)!important;white-space:nowrap}
+
+/* Homepage full library */
+.km-library-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.km-library-card{display:flex;flex-direction:column;gap:9px;min-height:170px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));transition:.25s transform,.25s border-color,.25s box-shadow}
+.km-library-card:hover{transform:translateY(-4px);border-color:rgba(114,229,232,.35);box-shadow:var(--shadow)}
+.km-library-card .num{font-size:10px;letter-spacing:.15em;color:var(--gold2);font-weight:800}
+.km-library-card strong{font-size:17px;color:var(--text)}
+.km-library-card span:last-child{font-size:13px;line-height:1.55;color:var(--muted)}
+
+@media(max-width:900px){.km-library-grid{grid-template-columns:repeat(2,1fr)}.km-page .chapter-head{padding-top:55px}}
+@media(max-width:560px){.km-library-grid{grid-template-columns:1fr}.km-page .step{padding:24px!important}.km-page .wrap{padding-left:16px!important;padding-right:16px!important}.km-page .km-sitebar{padding:12px 15px!important}.km-page .km-sitebar nav{gap:10px!important}}
