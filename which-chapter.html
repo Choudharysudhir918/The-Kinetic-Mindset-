@@ -1,0 +1,370 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The Kinetic Mindset</title><style id="km-global-first-design">
+:root{--km-bg:#080d18;--km-panel:#131b2d;--km-panel2:#10182a;--km-text:#f7f7f4;--km-muted:#aab4c7;--km-cyan:#72e5e8;--km-gold:#d8b15a;--km-gold2:#f0d486;--km-line:rgba(255,255,255,.11)}
+html{background:var(--km-bg)!important;color:var(--km-text)!important}
+body{margin:0!important;background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),var(--km-bg)!important;color:var(--km-text)!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+body,body *{box-sizing:border-box}
+body a{color:var(--km-cyan)}
+body p,body li,body label,body span{color:inherit}
+body input,body textarea,body select{background:#10182a!important;color:#f7f7f4!important;border-color:var(--km-line)!important}
+body button{color:#080d18!important;background:var(--km-gold)!important;border-color:var(--km-gold)!important}
+body button:hover{background:var(--km-gold2)!important}
+body header,body footer,body nav{border-color:var(--km-line)!important}
+/* Catch common leftover light surfaces from the original standalone pages. */
+body [style*="background:#fff"],body [style*="background: #fff"],body [style*="background:#ffffff"],body [style*="background: #ffffff"],body [style*="background:white"],body [style*="background: white"]{background:var(--km-panel)!important;color:var(--km-text)!important}
+body [style*="color:#111"],body [style*="color: #111"],body [style*="color:#222"],body [style*="color: #222"],body [style*="color:black"],body [style*="color: black"]{color:var(--km-text)!important}
+body img{max-width:100%;height:auto}
+.km-sitebar{position:sticky;top:0;z-index:1000;background:rgba(8,13,24,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--km-line);padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;font-family:Inter,system-ui,sans-serif}
+.km-sitebar .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--km-text);text-decoration:none}
+.km-sitebar nav{display:flex;gap:16px;flex-wrap:wrap;border:0!important}
+.km-sitebar nav a{font-size:13px;color:var(--km-muted);text-decoration:none}
+.km-sitebar nav a:hover{color:var(--km-cyan)}
+.km-page-shell{min-height:100vh}
+@media(max-width:760px){.km-sitebar{align-items:flex-start;flex-direction:column}.km-sitebar nav{gap:10px}}
+</style></head><body><div class="km-sitebar"><a class="brand" href="index.html">K THE KINETIC MINDSET</a><nav><a href="index.html">Home</a><a href="the-kinetic-mindset.html">The Book</a><a href="tools.html">Tools</a><a href="quotes-and-wisdom.html">Quotes</a></nav></div><!-- ================================================================
+     THE KINETIC MINDSET — WHICH CHAPTER DO YOU NEED RIGHT NOW?
+     (Blogger-safe embed)
+     HOW TO USE THIS ON BLOGSPOT:
+     1. In the post editor, switch to "HTML view" (not "Compose view") —
+        Compose view will strip the <style> and <script> tags below.
+     2. Paste this entire block in.
+     3. Switch back to Compose view only to preview — always edit in HTML view.
+     (Works the same way in a Layout > "HTML/JavaScript" gadget.)
+     ================================================================ -->
+<div id="km-chapter-root">
+<style>
+  #km-chapter-root {
+    --kc-navy: #12141C;
+    --kc-panel: #1B1F2B;
+    --kc-panel-line: #2B3040;
+    --kc-gold: #C9A259;
+    --kc-gold-soft: #9C7A38;
+    --kc-cream: #EFEAE0;
+    --kc-gray: #9098A8;
+
+    background: var(--kc-navy) !important;
+    color: var(--kc-cream) !important;
+    font-family: 'Source Sans 3', Arial, sans-serif !important;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+  #km-chapter-root, #km-chapter-root *{ box-sizing: border-box; }
+  #km-chapter-root a{ text-decoration:none; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  #km-chapter-root .kc-hero{ text-align:center; margin-bottom: 44px; }
+  #km-chapter-root .kc-kicker{
+    color: var(--kc-gold) !important;
+    font-size: 14px; letter-spacing: 0.06em; margin-bottom: 14px;
+  }
+  #km-chapter-root h1{
+    font-family: 'Fraunces', Georgia, serif !important;
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 38px);
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: #f7f7f4 !important;
+  }
+  #km-chapter-root .kc-hero p{
+    color: var(--kc-gray) !important;
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ---------- situation picker ---------- */
+  #km-chapter-root .kc-situations{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  #km-chapter-root .kc-situation-btn{
+    text-align:left;
+    background: var(--kc-panel) !important;
+    border: 1px solid var(--kc-panel-line);
+    color: var(--kc-cream) !important;
+    padding: 16px 18px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14.5px;
+    cursor: pointer;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  #km-chapter-root .kc-situation-btn:hover{
+    border-color: var(--kc-gold-soft);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- result ---------- */
+  #km-chapter-root .kc-result{
+    display:none;
+    animation: kcReveal 0.4s ease;
+  }
+  #km-chapter-root .kc-result.active{ display:block; }
+  @keyframes kcReveal{ from{ opacity:0; transform: translateY(8px); } to{ opacity:1; transform: translateY(0); } }
+
+  #km-chapter-root .kc-back{
+    background:none !important;
+    border:none;
+    color: var(--kc-gray) !important;
+    font-size: 13.5px;
+    cursor:pointer;
+    text-decoration: underline;
+    margin-bottom: 22px;
+    padding: 0;
+    font-family: inherit;
+  }
+  #km-chapter-root .kc-back:hover{ color: var(--kc-cream) !important; }
+
+  #km-chapter-root .kc-situation-echo{
+    font-size: 13.5px;
+    color: var(--kc-gray) !important;
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  #km-chapter-root .kc-chapter-eyebrow{
+    color: var(--kc-gold) !important;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  #km-chapter-root .kc-chapter-name{
+    font-family:'Fraunces', Georgia, serif !important;
+    font-size: 32px;
+    color: var(--kc-gold) !important;
+    margin: 0 0 16px;
+  }
+  #km-chapter-root .kc-why{
+    background: var(--kc-panel) !important;
+    border-left: 3px solid var(--kc-gold);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    font-size: 15.5px;
+    color: var(--kc-cream) !important;
+    margin-bottom: 28px;
+  }
+
+  #km-chapter-root .kc-guide-title{
+    font-size: 14px;
+    color: var(--kc-gray) !important;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--kc-panel-line);
+    padding-bottom: 10px;
+  }
+  #km-chapter-root .kc-guide-list{
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+  }
+  #km-chapter-root .kc-guide-list li{
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    color: var(--kc-cream) !important;
+  }
+  #km-chapter-root .kc-guide-list li .kc-num{
+    position:absolute; left:0; top: -1px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--kc-gold);
+    color: var(--kc-gold) !important;
+    font-size: 11px;
+    font-weight: 700;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  #km-chapter-root .kc-cta{
+    text-align:center;
+    padding-top: 22px;
+    border-top: 1px solid var(--kc-panel-line);
+  }
+  #km-chapter-root .kc-cta p{
+    font-size: 14px;
+    color: var(--kc-gray) !important;
+    margin: 0 0 14px;
+  }
+  #km-chapter-root .kc-btn{
+    display:inline-block;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 11px 24px;
+    border-radius: 7px;
+    border: 1px solid var(--kc-gold);
+    background: transparent !important;
+    color: var(--kc-gold) !important;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+  }
+  #km-chapter-root .kc-btn:hover{ background: var(--kc-gold) !important; color: var(--kc-navy) !important; }
+
+  footer#km-chapter-footer{
+    text-align:center; margin-top: 60px; padding-top: 26px;
+    border-top: 1px solid var(--kc-panel-line);
+    color: var(--kc-gray) !important; font-size: 14px;
+  }
+  footer#km-chapter-footer a{ color: var(--kc-gold) !important; }
+  footer#km-chapter-footer a:hover{ text-decoration:underline; }
+
+  @media (max-width: 560px){
+    #km-chapter-root{ padding: 40px 16px 60px; }
+    #km-chapter-root .kc-situations{ grid-template-columns: 1fr; }
+    #km-chapter-root .kc-chapter-name{ font-size: 26px; }
+  }
+</style>
+
+  <div class="kc-hero">
+    <div class="kc-kicker">The Kinetic Mindset - Reader Tools</div>
+    <h1>Which chapter do you need right now?</h1>
+    <p>Skip the guesswork. Pick what's actually going on for you today, and get the chapter - plus a short, practical way to work with it - right now.</p>
+  </div>
+
+  <div class="kc-situations" id="kc-situations"></div>
+
+  <div class="kc-result" id="kc-result">
+    <button class="kc-back" id="kc-back-btn">&laquo; Choose a different situation</button>
+    <div class="kc-situation-echo" id="kc-situation-echo"></div>
+    <div class="kc-chapter-eyebrow">Your chapter is</div>
+    <h2 class="kc-chapter-name" id="kc-chapter-name"></h2>
+    <div class="kc-why" id="kc-why"></div>
+    <div class="kc-guide-title">FOUR WAYS TO WORK WITH IT THIS WEEK</div>
+    <ul class="kc-guide-list" id="kc-guide-list"></ul>
+    <div class="kc-cta">
+      <p>Every chapter has a full walkthrough, worksheet, and Sprint plan in the book.</p>
+      <a class="kc-btn" href="the-kinetic-mindset.html">Read the full chapter -&gt;</a>
+    </div>
+  </div>
+
+  <footer id="km-chapter-footer">
+    Not sure which type of person you are before you even start?
+    <br><a href="kinetic-type-quiz.html">Take the Kinetic Type quiz -&gt;</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById("km-chapter-root");
+  if (!root) return;
+
+  var chapters = {
+    blueprint: {
+      name: "The Blueprint of Thought",
+      why: "Real change starts with what you believe is possible, long before any strategy or system can work. If the story running underneath feels unchangeable, that story is the actual chapter to open first.",
+      guide: [
+        "Name the exact belief running the show right now, in one plain sentence - you can't challenge what you haven't named.",
+        "Find one small piece of real evidence from your own life that contradicts that belief.",
+        "Say the new belief out loud once a day for a week. Repetition is what makes it feel default, not saying it once.",
+        "Use the BELIEF prompt in your daily tracker to catch the old story showing up in real time, not after the fact."
+      ]
+    },
+    habits: {
+      name: "Habit Automation",
+      why: "When something keeps falling apart after a few good days, the problem usually isn't motivation - it's a system too big to survive an ordinary bad day.",
+      guide: [
+        "Cut whatever habit you're building in half. If it still feels hard, cut it again.",
+        "Attach the new habit to something you already do without thinking about it.",
+        "Decide right now what you'll do the first time you miss a day, so one miss doesn't quietly become ten.",
+        "Track only a Yes or No for two weeks. No streak-shaming - just honest data."
+      ]
+    },
+    subconscious: {
+      name: "The Subconscious Engine",
+      why: "An old, unexamined story about what you deserve is strong enough to quietly sabotage even a good plan. This chapter is about finding that story before it finds you again.",
+      guide: [
+        "Write the belief down in the exact words your inner voice actually uses - vague thoughts don't get replaced.",
+        "Trace it back to the first moment you remember believing it. Naming its origin weakens its grip.",
+        "Replace it with one specific, rehearsed counter-statement - not a generic affirmation.",
+        "Expect it to resurface under pressure. That's not failure, that's the new belief being tested."
+      ]
+    },
+    wealthdefense: {
+      name: "The Wealth Defense",
+      why: "You can't build anything meaningful on top of a financial picture you can't actually see. This chapter starts with visibility, not restriction.",
+      guide: [
+        "Track every dollar in and out for 14 days without judging any of it yet - just watch.",
+        "Give every dollar a job before you spend it (zero-based budgeting).",
+        "Cut or renegotiate one recurring expense this week - just one.",
+        "Redirect whatever you free up straight into an asset, however small. Visibility without redirection is just data."
+      ]
+    },
+    systematicoffense: {
+      name: "The Systematic Offense",
+      why: "Money that's just sitting there is quietly losing ground. Offense doesn't mean a hot tip - it means one repeatable rule you actually follow.",
+      guide: [
+        "Write your entry rule and your exit rule before you invest a single dollar.",
+        "Automate one recurring contribution so the decision only gets made once, not every month.",
+        "Choose boring and consistent over exciting and occasional.",
+        "Review your rules once a quarter - not every time the headlines move."
+      ]
+    },
+    lifestylelever: {
+      name: "The Lifestyle Lever",
+      why: "Once mindset and money have real systems, time becomes the actual bottleneck. This chapter is about leverage, not just effort.",
+      guide: [
+        "List everything only you are currently doing. Circle one thing to hand off this week.",
+        "Protect one full block of unscheduled time per week as non-negotiable.",
+        "Reach out to one dormant, meaningful relationship - not to ask for anything, just to reconnect.",
+        "Ask yourself what you'd stop doing today if you already believed you had enough time."
+      ]
+    }
+  };
+
+  var situations = [
+    { text: "I keep starting things and quitting after a few days", ch: "habits" },
+    { text: "I don't feel like I even deserve the outcome I'm chasing", ch: "subconscious" },
+    { text: "I have no idea where my money actually goes each month", ch: "wealthdefense" },
+    { text: "I have some savings but it's just sitting there doing nothing", ch: "systematicoffense" },
+    { text: "I'm constantly busy but nothing important is actually moving", ch: "lifestylelever" },
+    { text: "I feel stuck, like nothing is ever really going to change", ch: "blueprint" },
+    { text: "I hit one setback and now I've completely stopped", ch: "habits" },
+    { text: "I'm doing everything myself and it isn't sustainable", ch: "lifestylelever" }
+  ];
+
+  var situationsEl = root.querySelector("#kc-situations");
+  situations.forEach(function(s, i){
+    var btn = document.createElement("button");
+    btn.className = "kc-situation-btn";
+    btn.textContent = s.text;
+    btn.addEventListener("click", function(){ showChapter(s); });
+    situationsEl.appendChild(btn);
+  });
+
+  function showChapter(situation){
+    var ch = chapters[situation.ch];
+
+    root.querySelector("#kc-situation-echo").textContent = "For: \"" + situation.text + "\"";
+    root.querySelector("#kc-chapter-name").textContent = ch.name;
+    root.querySelector("#kc-why").textContent = ch.why;
+
+    var list = root.querySelector("#kc-guide-list");
+    list.innerHTML = "";
+    ch.guide.forEach(function(step, idx){
+      var li = document.createElement("li");
+      var num = document.createElement("span");
+      num.className = "kc-num";
+      num.textContent = String(idx + 1);
+      li.appendChild(num);
+      li.appendChild(document.createTextNode(step));
+      list.appendChild(li);
+    });
+
+    situationsEl.style.display = "none";
+    root.querySelector(".kc-hero").style.display = "none";
+    root.querySelector("#kc-result").classList.add("active");
+  }
+
+  root.querySelector("#kc-back-btn").addEventListener("click", function(){
+    root.querySelector("#kc-result").classList.remove("active");
+    situationsEl.style.display = "grid";
+    root.querySelector(".kc-hero").style.display = "block";
+  });
+})();
+</script></body></html>

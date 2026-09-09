@@ -1,13 +1,35 @@
-<div id="km-toolkit-root">
+<!doctype html><html><head><meta charset="utf-8"><title>The Kinetic Mindset</title><style id="km-global-first-design">
+:root{--km-bg:#080d18;--km-panel:#131b2d;--km-panel2:#10182a;--km-text:#f7f7f4;--km-muted:#aab4c7;--km-cyan:#72e5e8;--km-gold:#d8b15a;--km-gold2:#f0d486;--km-line:rgba(255,255,255,.11)}
+html{background:var(--km-bg)!important;color:var(--km-text)!important}
+body{margin:0!important;background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),var(--km-bg)!important;color:var(--km-text)!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+body,body *{box-sizing:border-box}
+body a{color:var(--km-cyan)}
+body p,body li,body label,body span{color:inherit}
+body input,body textarea,body select{background:#10182a!important;color:#f7f7f4!important;border-color:var(--km-line)!important}
+body button{color:#080d18!important;background:var(--km-gold)!important;border-color:var(--km-gold)!important}
+body button:hover{background:var(--km-gold2)!important}
+body header,body footer,body nav{border-color:var(--km-line)!important}
+/* Catch common leftover light surfaces from the original standalone pages. */
+body [style*="background:#fff"],body [style*="background: #fff"],body [style*="background:#ffffff"],body [style*="background: #ffffff"],body [style*="background:white"],body [style*="background: white"]{background:var(--km-panel)!important;color:var(--km-text)!important}
+body [style*="color:#111"],body [style*="color: #111"],body [style*="color:#222"],body [style*="color: #222"],body [style*="color:black"],body [style*="color: black"]{color:var(--km-text)!important}
+body img{max-width:100%;height:auto}
+.km-sitebar{position:sticky;top:0;z-index:1000;background:rgba(8,13,24,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--km-line);padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;font-family:Inter,system-ui,sans-serif}
+.km-sitebar .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--km-text);text-decoration:none}
+.km-sitebar nav{display:flex;gap:16px;flex-wrap:wrap;border:0!important}
+.km-sitebar nav a{font-size:13px;color:var(--km-muted);text-decoration:none}
+.km-sitebar nav a:hover{color:var(--km-cyan)}
+.km-page-shell{min-height:100vh}
+@media(max-width:760px){.km-sitebar{align-items:flex-start;flex-direction:column}.km-sitebar nav{gap:10px}}
+</style></head><body><div class="km-sitebar"><a class="brand" href="index.html">K THE KINETIC MINDSET</a><nav><a href="index.html">Home</a><a href="the-kinetic-mindset.html">The Book</a><a href="tools.html">Tools</a><a href="quotes-and-wisdom.html">Quotes</a></nav></div><div id="km-toolkit-root">
 <style>
   #km-toolkit-root {
-    --km-navy: #080d18;
-    --km-panel: #131b2d;
-    --km-panel-line: rgba(255,255,255,.11);
-    --km-gold: #d8b15a;
-    --km-gold-soft: #f0d486;
-    --km-cream: #e8edf5;
-    --km-gray: #aab4c7;
+    --km-navy: #12141C;
+    --km-panel: #1B1F2B;
+    --km-panel-line: #2B3040;
+    --km-gold: #C9A259;
+    --km-gold-soft: #9C7A38;
+    --km-cream: #EFEAE0;
+    --km-gray: #9098A8;
 
     background: var(--km-navy) !important;
     color: var(--km-cream) !important;
@@ -38,7 +60,7 @@
     font-size: clamp(28px, 5vw, 40px);
     line-height: 1.2;
     margin: 0 0 18px;
-    color: #fff !important;
+    color: #f7f7f4 !important;
   }
   #km-toolkit-root .km-hero p{
     color: var(--km-gray) !important;
@@ -103,15 +125,15 @@
   #km-toolkit-root .km-card-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 10px; gap: 10px; }
   #km-toolkit-root .km-card h3{
     font-family:'Fraunces', Georgia, serif !important;
-    font-size: 19px; color: #fff !important; margin:0;
+    font-size: 19px; color: #f7f7f4 !important; margin:0;
   }
   #km-toolkit-root .km-cost{
     font-size: 11.5px; padding: 3px 9px; border-radius: 999px;
-    white-space:nowrap; border: 1px solid var(--km-panel-line); color: var(--km-gray);
+    #f7f7f4-space:nowrap; border: 1px solid var(--km-panel-line); color: var(--km-gray);
   }
-  #km-toolkit-root .km-cost.free{ color: #72e5e8 !important; border-color: rgba(111,169,138,0.4); }
+  #km-toolkit-root .km-cost.free{ color: #6FA98A !important; border-color: rgba(111,169,138,0.4); }
   #km-toolkit-root .km-cost.freemium{ color: var(--km-gold) !important; border-color: rgba(201,162,89,0.4); }
-  #km-toolkit-root .km-cost.paid{ color: #72e5e8 !important; border-color: rgba(201,122,106,0.4); }
+  #km-toolkit-root .km-cost.paid{ color: #C97A6A !important; border-color: rgba(201,122,106,0.4); }
   #km-toolkit-root .km-card p{ font-size: 14.5px; color: var(--km-gray) !important; margin: 0 0 12px; flex-grow:1; }
   #km-toolkit-root .km-card .km-why{
     font-size: 13px; color: var(--km-cream) !important;
@@ -141,12 +163,6 @@
     #km-toolkit-root .km-grid{ grid-template-columns: 1fr; }
     #km-toolkit-root{ padding: 40px 16px 60px; }
   }
-
-  /* KINETIC MINDSET THEME INTEGRATION
-     This page keeps its original content/functionality while matching
-     the main site's navy + cyan + gold visual system. */
-  body{background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),#080d18!important;color:#e8edf5!important;}
-  a{color:#72e5e8;}
 </style>
 
   <div class="km-hero">
@@ -291,4 +307,4 @@
 
   render();
 })();
-</script>
+</script></body></html>

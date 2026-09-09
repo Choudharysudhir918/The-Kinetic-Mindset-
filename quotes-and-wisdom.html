@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Lines Worth Memorizing | The Kinetic Mindset</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --cream:#080d18;
+    --paper:#f7f7f4;
+    --ink:#221F1A;
+    --ink-soft:#5B5648;
+    --gold:#8A6D3B;
+    --gold-deep:#6B5329;
+    --green:#4A7856;
+    --blue:#3E6B8A;
+    --grey:#8A8A8A;
+    --line:#E4DCC8;
+    --max:900px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  /* HERO */
+  .hero{
+    padding:80px 24px 50px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:'Source Serif 4',serif;font-style:italic;
+    font-size:15px;color:var(--ink-soft);margin-bottom:16px;
+  }
+  .hero h1{
+    font-family:'Source Serif 4',serif;font-weight:700;
+    font-size:clamp(34px,5.5vw,54px);line-height:1.08;
+    margin:0 0 16px;
+  }
+  .hero p{
+    font-size:17px;color:var(--ink-soft);
+    max-width:56ch;margin:0 auto;
+  }
+
+  /* FEATURED QUOTE */
+  .featured{
+    padding:56px 24px 40px;
+    text-align:center;
+  }
+  .featured-label{
+    font-size:13px;color:var(--gold-deep);font-weight:600;margin-bottom:18px;
+  }
+  .featured-quote{
+    font-family:'Source Serif 4',serif;font-style:italic;font-weight:600;
+    font-size:clamp(22px,3.4vw,32px);
+    line-height:1.35;
+    max-width:26ch;
+    margin:0 auto 18px;
+    transition:opacity .25s ease;
+  }
+  .featured-attr{font-size:14.5px;color:var(--ink-soft);margin-bottom:26px;}
+  .featured-attr b{color:var(--ink);font-weight:600;}
+  .shuffle-btn{
+    background:var(--ink);color:var(--cream);
+    border:none;border-radius:3px;
+    padding:12px 26px;font-family:'Inter',sans-serif;
+    font-weight:600;font-size:14px;cursor:pointer;
+    transition:background .15s ease;
+  }
+  .shuffle-btn:hover{background:var(--gold-deep);}
+
+  /* FILTERS */
+  .filters{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+    padding:0 24px 44px;
+  }
+  .filter-chip{
+    border:1px solid var(--line);
+    background:var(--paper);
+    color:var(--ink-soft);
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;font-weight:500;
+    padding:9px 18px;border-radius:20px;
+    cursor:pointer;transition:all .15s ease;
+  }
+  .filter-chip:hover{border-color:var(--gold);}
+  .filter-chip.active{
+    background:var(--ink);color:var(--cream);border-color:var(--ink);
+  }
+
+  /* GRID */
+  .grid{
+    max-width:var(--max);margin:0 auto;
+    padding:0 24px 90px;
+    columns:2;column-gap:20px;
+  }
+  @media (max-width:680px){.grid{columns:1;}}
+
+  .qcard{
+    break-inside:avoid;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left-width:4px;
+    border-radius:4px;
+    padding:24px 24px 20px;
+    margin-bottom:20px;
+    cursor:pointer;
+    position:relative;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .qcard:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(34,31,26,0.06);
+  }
+  .qcard.phase-internal{border-left-color:var(--gold);}
+  .qcard.phase-financial{border-left-color:var(--green);}
+  .qcard.phase-scaling{border-left-color:var(--blue);}
+  .qcard.phase-purpose{border-left-color:var(--gold);}
+  .qcard.phase-bonus{border-left-color:var(--grey);}
+
+  .qcard .chap-tag{
+    font-size:11.5px;font-weight:600;letter-spacing:.02em;
+    margin-bottom:10px;
+  }
+  .qcard.phase-internal .chap-tag{color:var(--gold-deep);}
+  .qcard.phase-financial .chap-tag{color:var(--green);}
+  .qcard.phase-scaling .chap-tag{color:var(--blue);}
+  .qcard.phase-purpose .chap-tag{color:var(--gold-deep);}
+  .qcard.phase-bonus .chap-tag{color:var(--grey);}
+
+  .qcard .qtext{
+    font-family:'Source Serif 4',serif;font-style:italic;
+    font-size:18px;line-height:1.45;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+  .qcard .qattr{
+    font-size:13px;color:var(--ink-soft);
+  }
+  .copy-flag{
+    position:absolute;top:14px;right:16px;
+    font-size:11.5px;font-weight:600;color:var(--green);
+    opacity:0;transition:opacity .2s ease;
+  }
+  .copy-flag.show{opacity:1;}
+
+  footer{padding:20px 24px 70px;text-align:center;}
+  footer p{font-size:13.5px;color:#a39c86;max-width:50ch;margin:0 auto;}
+</style>
+<style id="km-global-first-design">
+:root{--km-bg:#080d18;--km-panel:#131b2d;--km-panel2:#10182a;--km-text:#f7f7f4;--km-muted:#aab4c7;--km-cyan:#72e5e8;--km-gold:#d8b15a;--km-gold2:#f0d486;--km-line:rgba(255,255,255,.11)}
+html{background:var(--km-bg)!important;color:var(--km-text)!important}
+body{margin:0!important;background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),var(--km-bg)!important;color:var(--km-text)!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+body,body *{box-sizing:border-box}
+body a{color:var(--km-cyan)}
+body p,body li,body label,body span{color:inherit}
+body input,body textarea,body select{background:#10182a!important;color:#f7f7f4!important;border-color:var(--km-line)!important}
+body button{color:#080d18!important;background:var(--km-gold)!important;border-color:var(--km-gold)!important}
+body button:hover{background:var(--km-gold2)!important}
+body header,body footer,body nav{border-color:var(--km-line)!important}
+/* Catch common leftover light surfaces from the original standalone pages. */
+body [style*="background:#fff"],body [style*="background: #fff"],body [style*="background:#ffffff"],body [style*="background: #ffffff"],body [style*="background:white"],body [style*="background: white"]{background:var(--km-panel)!important;color:var(--km-text)!important}
+body [style*="color:#111"],body [style*="color: #111"],body [style*="color:#222"],body [style*="color: #222"],body [style*="color:black"],body [style*="color: black"]{color:var(--km-text)!important}
+body img{max-width:100%;height:auto}
+.km-sitebar{position:sticky;top:0;z-index:1000;background:rgba(8,13,24,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--km-line);padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;font-family:Inter,system-ui,sans-serif}
+.km-sitebar .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--km-text);text-decoration:none}
+.km-sitebar nav{display:flex;gap:16px;flex-wrap:wrap;border:0!important}
+.km-sitebar nav a{font-size:13px;color:var(--km-muted);text-decoration:none}
+.km-sitebar nav a:hover{color:var(--km-cyan)}
+.km-page-shell{min-height:100vh}
+@media(max-width:760px){.km-sitebar{align-items:flex-start;flex-direction:column}.km-sitebar nav{gap:10px}}
+</style></head>
+<body><div class="km-sitebar"><a class="brand" href="index.html">K THE KINETIC MINDSET</a><nav><a href="index.html">Home</a><a href="the-kinetic-mindset.html">The Book</a><a href="chapter-1.html">Chapters</a><a href="tools.html">Tools</a><a href="quotes-and-wisdom.html">Quotes</a><a href="index.html#author">Author</a></nav></div>
+
+  <div class="hero">
+    <div class="hero-eyebrow">A companion to <a href="the-kinetic-mindset.html" style="color:inherit;">The Kinetic Mindset</a></div>
+    <h1>50 Lines Worth Memorizing</h1>
+    <p>Five sentences from every chapter, compressed from ten books. Tap any card to copy it — or hit shuffle for one to sit with today.</p>
+  </div>
+
+  <div class="featured">
+    <div class="featured-label">Today's line</div>
+    <div class="featured-quote" id="featuredQuote">"As he thinks, so he is; as he continues to think, so he remains."</div>
+    <div class="featured-attr" id="featuredAttr"><b>James Allen</b> — As a Man Thinketh, Chapter 1</div>
+    <button class="shuffle-btn" id="shuffleBtn">Shuffle another</button>
+  </div>
+
+  <div class="filters" id="filters">
+    <div class="filter-chip active" data-filter="all">All 50</div>
+    <div class="filter-chip" data-filter="internal">Internal (1–3)</div>
+    <div class="filter-chip" data-filter="financial">Financial (4–5)</div>
+    <div class="filter-chip" data-filter="scaling">Scaling (6–8)</div>
+    <div class="filter-chip" data-filter="purpose">Purpose (9)</div>
+    <div class="filter-chip" data-filter="bonus">Bonus (10)</div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <p>Copying requires clipboard permission in some browsers — if a tap doesn't flash "copied," the text is still selectable by hand.</p>
+  </footer>
+
+<script>
+const quotes = [
+  {c:1,phase:"internal",book:"As a Man Thinketh",author:"James Allen",text:"As he thinks, so he is; as he continues to think, so he remains."},
+  {c:1,phase:"internal",book:"As a Man Thinketh",author:"James Allen",text:"Mind is the master power that moulds and makes, and man is mind."},
+  {c:1,phase:"internal",book:"As a Man Thinketh",author:"James Allen",text:"Circumstances do not make the man; they reveal him to himself."},
+  {c:1,phase:"internal",book:"As a Man Thinketh",author:"James Allen",text:"They themselves are makers of themselves."},
+  {c:1,phase:"internal",book:"As a Man Thinketh",author:"James Allen",text:"You will become as small as your controlling desire; as great as your dominant aspiration."},
+
+  {c:2,phase:"internal",book:"Atomic Habits",author:"James Clear",text:"You do not rise to the level of your goals. You fall to the level of your systems."},
+  {c:2,phase:"internal",book:"Atomic Habits",author:"James Clear",text:"Every action you take is a vote for the type of person you wish to become."},
+  {c:2,phase:"internal",book:"Atomic Habits",author:"James Clear",text:"Habits are the compound interest of self-improvement."},
+  {c:2,phase:"internal",book:"Atomic Habits",author:"James Clear",text:"You should be far more concerned with your current trajectory than with your current results."},
+  {c:2,phase:"internal",book:"Atomic Habits",author:"James Clear",text:"Success is the product of daily habits not once-in-a-lifetime transformations."},
+
+  {c:3,phase:"internal",book:"The Power of Your Subconscious Mind",author:"Joseph Murphy",text:"Whatever the conscious mind assumes and believes to be true, the subconscious mind will accept and bring to pass."},
+  {c:3,phase:"internal",book:"The Power of Your Subconscious Mind",author:"Joseph Murphy",text:"Your subconscious mind is a recorder... it does not talk back to you or argue with you."},
+  {c:3,phase:"internal",book:"The Power of Your Subconscious Mind",author:"Joseph Murphy",text:"As you sow in your subconscious mind, so shall you reap in your body and environment."},
+  {c:3,phase:"internal",book:"The Power of Your Subconscious Mind",author:"Joseph Murphy",text:"Feeling is the secret."},
+  {c:3,phase:"internal",book:"The Power of Your Subconscious Mind",author:"Joseph Murphy",text:"Change your thoughts and you change your destiny."},
+
+  {c:4,phase:"financial",book:"Rich Dad Poor Dad",author:"Robert Kiyosaki",text:"The rich buy assets. The poor and middle class buy liabilities that they think are assets."},
+  {c:4,phase:"financial",book:"Rich Dad Poor Dad",author:"Robert Kiyosaki",text:"It's not how much money you make. It's how much money you keep."},
+  {c:4,phase:"financial",book:"Rich Dad Poor Dad",author:"Robert Kiyosaki",text:"An asset puts money in my pocket. A liability takes money out of my pocket."},
+  {c:4,phase:"financial",book:"Rich Dad Poor Dad",author:"Robert Kiyosaki",text:"The single most powerful asset we all have is our mind."},
+  {c:4,phase:"financial",book:"Rich Dad Poor Dad",author:"Robert Kiyosaki",text:"Mind your own business."},
+
+  {c:5,phase:"financial",book:"The Intelligent Investor",author:"Benjamin Graham",text:"An investment operation is one which, upon thorough analysis, promises safety of principal and an adequate return."},
+  {c:5,phase:"financial",book:"The Intelligent Investor",author:"Benjamin Graham",text:"Mr. Market is there to serve you, not to guide you."},
+  {c:5,phase:"financial",book:"The Intelligent Investor",author:"Benjamin Graham",text:"The margin of safety is always dependent on the price paid."},
+  {c:5,phase:"financial",book:"The Intelligent Investor",author:"Benjamin Graham",text:"The investor's chief problem and even his worst enemy is likely to be himself."},
+  {c:5,phase:"financial",book:"The Intelligent Investor",author:"Benjamin Graham",text:"In the short run, the market is a voting machine, but in the long run it is a weighing machine."},
+
+  {c:6,phase:"scaling",book:"How to Win Friends and Influence People",author:"Dale Carnegie",text:"You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you."},
+  {c:6,phase:"scaling",book:"How to Win Friends and Influence People",author:"Dale Carnegie",text:"Any fool can criticize, condemn, and complain and most fools do."},
+  {c:6,phase:"scaling",book:"How to Win Friends and Influence People",author:"Dale Carnegie",text:"There is only one way to get anybody to do anything... by making the other person want to do it."},
+  {c:6,phase:"scaling",book:"How to Win Friends and Influence People",author:"Dale Carnegie",text:"When dealing with people, remember you are not dealing with creatures of logic, but with creatures of emotion."},
+  {c:6,phase:"scaling",book:"How to Win Friends and Influence People",author:"Dale Carnegie",text:"A person's name is to that person the sweetest and most important sound in any language."},
+
+  {c:7,phase:"scaling",book:"Deep Work",author:"Cal Newport",text:"Deep work is the ability to focus without distraction on a cognitively demanding task."},
+  {c:7,phase:"scaling",book:"Deep Work",author:"Cal Newport",text:"Clarity about what matters provides clarity about what does not."},
+  {c:7,phase:"scaling",book:"Deep Work",author:"Cal Newport",text:"A deep life is a good life."},
+  {c:7,phase:"scaling",book:"Deep Work",author:"Cal Newport",text:"To produce at your peak level you need to work for extended periods with full concentration on a single task free from distraction."},
+  {c:7,phase:"scaling",book:"Deep Work",author:"Cal Newport",text:"Human beings, it seems, are at their best when immersed deeply in something challenging."},
+
+  {c:8,phase:"scaling",book:"Ego Is the Enemy",author:"Ryan Holiday",text:"Ego is the enemy of what you want and of what you have."},
+  {c:8,phase:"scaling",book:"Ego Is the Enemy",author:"Ryan Holiday",text:"The only thing that can kill the ambitious is the belief that they must never fail."},
+  {c:8,phase:"scaling",book:"Mindset",author:"Carol S. Dweck",text:"In a growth mindset, people believe that their most basic abilities can be developed through dedication and hard work."},
+  {c:8,phase:"scaling",book:"Mindset",author:"Carol S. Dweck",text:"Why waste time proving over and over how great you are, when you could be getting better?"},
+  {c:8,phase:"scaling",book:"Ego Is the Enemy",author:"Ryan Holiday",text:"Becoming the best version of yourself is impossible without humility."},
+
+  {c:9,phase:"purpose",book:"The Psychology of Money",author:"Morgan Housel",text:"Use money to gain control over your time, because not having control of your time is such a powerful and universal drag on happiness."},
+  {c:9,phase:"purpose",book:"The Psychology of Money",author:"Morgan Housel",text:"The hardest financial skill is getting the goalpost to stop moving."},
+  {c:9,phase:"purpose",book:"The Psychology of Money",author:"Morgan Housel",text:"Wealth is what you don't see."},
+  {c:9,phase:"purpose",book:"The 4-Hour Workweek",author:"Tim Ferriss",text:"Focus on being productive instead of busy."},
+  {c:9,phase:"purpose",book:"The 4-Hour Workweek",author:"Tim Ferriss",text:"The question you should be asking isn't, 'What do I want?' but 'What would excite me?'"},
+
+  {c:10,phase:"bonus",book:"Man's Search for Meaning",author:"Viktor Frankl",text:"Everything can be taken from a man but one thing: the last of the human freedoms to choose one's attitude in any given set of circumstances."},
+  {c:10,phase:"bonus",book:"Man's Search for Meaning",author:"Viktor Frankl",text:"Those who have a 'why' to live, can bear with almost any 'how.'"},
+  {c:10,phase:"bonus",book:"Man's Search for Meaning",author:"Viktor Frankl",text:"When we are no longer able to change a situation, we are challenged to change ourselves."},
+  {c:10,phase:"bonus",book:"Man's Search for Meaning",author:"Viktor Frankl",text:"The salvation of man is through love and in love."},
+  {c:10,phase:"bonus",book:"Man's Search for Meaning",author:"Viktor Frankl",text:"Live as if you were living already for the second time."}
+];
+
+// Fix HTML entities that Blogger may leave visible inside JavaScript strings.
+function cleanQuoteText(text) {
+  return String(text)
+    .replace(/&#8212;/g, String.fromCharCode(8212))
+    .replace(/&#x2014;/gi, String.fromCharCode(8212))
+    .replace(/&amp;#8212;/g, String.fromCharCode(8212))
+    .replace(/&amp;#x2014;/gi, String.fromCharCode(8212));
+}
+
+const grid = document.getElementById('grid');
+
+function render(filter) {
+  grid.innerHTML = '';
+  quotes.filter(q => filter === 'all' || q.phase === filter).forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = `qcard phase-${q.phase}`;
+    card.innerHTML = `
+      <div class="chap-tag">CHAPTER ${q.c}</div>
+      <div class="qtext">"${cleanQuoteText(q.text)}"</div>
+      <div class="qattr"><b>${q.author}</b> - ${q.book}</div>
+      <div class="copy-flag">Copied</div>
+    `;
+    card.addEventListener('click', () => {
+      const toCopy = `"${cleanQuoteText(q.text)}" ${String.fromCharCode(8212)} ${q.author}, ${q.book}`;
+      const flag = card.querySelector('.copy-flag');
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(toCopy).then(() => {
+          flag.classList.add('show');
+          setTimeout(() => flag.classList.remove('show'), 1200);
+        }).catch(() => {});
+      }
+    });
+    grid.appendChild(card);
+  });
+}
+
+render('all');
+
+document.getElementById('filters').addEventListener('click', (e) => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  render(chip.dataset.filter);
+});
+
+function setFeatured(q) {
+  document.getElementById('featuredQuote').textContent = `"${cleanQuoteText(q.text)}"`;
+  document.getElementById('featuredAttr').innerHTML = `<b>${q.author}</b> ${String.fromCharCode(8212)} ${q.book}, Chapter ${q.c}`;
+}
+
+document.getElementById('shuffleBtn').addEventListener('click', () => {
+  const q = quotes[Math.floor(Math.random() * quotes.length)];
+  const el = document.getElementById('featuredQuote');
+  el.style.opacity = 0;
+  setTimeout(() => {
+    setFeatured(q);
+    el.style.opacity = 1;
+  }, 180);
+});
+</script>
+</body>
+</html>

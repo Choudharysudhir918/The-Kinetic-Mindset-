@@ -1,0 +1,421 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<title>The Kinetic MIndset </title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --cream:#080d18;
+    --paper:#f7f7f4;
+    --ink:#221F1A;
+    --ink-soft:#5B5648;
+    --gold:#8A6D3B;
+    --gold-deep:#6B5329;
+    --green:#4A7856;
+    --blue:#3E6B8A;
+    --rust:#B4483C;
+    --line:#E4DCC8;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  img{max-width:100%;display:block;}
+  a{color:var(--gold-deep);}
+
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:92px 24px 70px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.05;
+    margin:0 0 20px;
+    max-width:14ch;
+    margin-left:auto;margin-right:auto;
+  }
+  .hero p{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 auto 34px;
+  }
+  .author-strip{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:8px 6px;
+    font-size:13px;color:#9a927c;
+    max-width:620px;margin:0 auto;
+  }
+  .author-strip span:not(:last-child)::after{content:"";margin-left:0;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:76px 24px;}
+  .section-alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .section-label{
+    font-size:13px;
+    color:var(--gold-deep);
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .section h2{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,38px);
+    margin:0 0 20px;
+    line-height:1.15;
+  }
+  .section > .container > p.lede{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin-bottom:8px;
+  }
+
+  /* ---------- INTRO ---------- */
+  .intro-body p{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:66ch;
+  }
+  .intro-body p:first-of-type::first-letter{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:56px;
+    float:left;
+    line-height:0.8;
+    padding-right:10px;
+    padding-top:6px;
+    color:var(--gold);
+  }
+
+  /* ---------- SYSTEM MAP ---------- */
+  .map-frame{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px;
+    max-width:520px;
+    margin:36px auto 0;
+  }
+
+  .chapter-link{
+    display:inline-block;
+    margin-top:14px;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--gold-deep);
+    text-decoration:none;
+  }
+  .chapter-link:hover{text-decoration:underline;}
+
+  /* ---------- CHAPTER LIST ---------- */
+  .phase-heading{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.02em;
+    margin:44px 0 4px;
+    padding-top:4px;
+  }
+  .phase-heading.internal{color:var(--gold-deep);}
+  .phase-heading.financial{color:var(--green);}
+  .phase-heading.scaling{color:var(--blue);}
+  .phase-heading.culmination{color:var(--gold-deep);}
+  .phase-heading.bonus{color:#8A8A8A;}
+
+  .chapter-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left-width:4px;
+    border-radius:4px;
+    padding:24px 26px;
+    margin-bottom:16px;
+  }
+  .chapter-card.internal{border-left-color:var(--gold);}
+  .chapter-card.financial{border-left-color:var(--green);}
+  .chapter-card.scaling{border-left-color:var(--blue);}
+  .chapter-card.culmination{border-left-color:var(--gold);}
+  .chapter-card.bonus{border-left-color:#B0B0B0;border-style:dashed;}
+
+  .chapter-num{
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .chapter-title{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:22px;
+    margin:0 0 4px;
+  }
+  .chapter-sub{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    margin-bottom:12px;
+  }
+  .chapter-source{
+    font-size:13px;
+    color:var(--gold-deep);
+    margin-bottom:10px;
+  }
+  .chapter-teaser{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:64ch;
+  }
+
+  /* ---------- EMERGENCY CARDS ---------- */
+  .cards-frame{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px;
+    max-width:640px;
+    margin:36px auto 0;
+  }
+  .cards-caption{
+    text-align:center;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    font-style:italic;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:56px 24px 70px;
+    text-align:center;
+  }
+  footer p{
+    font-size:14px;
+    color:#a39c86;
+    max-width:50ch;
+    margin:0 auto;
+  }
+  footer .signoff{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+
+  @media (max-width:600px){
+    .hero{padding:64px 20px 48px;}
+    .section{padding:56px 20px;}
+  }
+</style>
+<style id="km-global-first-design">
+:root{--km-bg:#080d18;--km-panel:#131b2d;--km-panel2:#10182a;--km-text:#f7f7f4;--km-muted:#aab4c7;--km-cyan:#72e5e8;--km-gold:#d8b15a;--km-gold2:#f0d486;--km-line:rgba(255,255,255,.11)}
+html{background:var(--km-bg)!important;color:var(--km-text)!important}
+body{margin:0!important;background:radial-gradient(circle at 80% 10%,rgba(114,229,232,.08),transparent 30%),var(--km-bg)!important;color:var(--km-text)!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+body,body *{box-sizing:border-box}
+body a{color:var(--km-cyan)}
+body p,body li,body label,body span{color:inherit}
+body input,body textarea,body select{background:#10182a!important;color:#f7f7f4!important;border-color:var(--km-line)!important}
+body button{color:#080d18!important;background:var(--km-gold)!important;border-color:var(--km-gold)!important}
+body button:hover{background:var(--km-gold2)!important}
+body header,body footer,body nav{border-color:var(--km-line)!important}
+/* Catch common leftover light surfaces from the original standalone pages. */
+body [style*="background:#fff"],body [style*="background: #fff"],body [style*="background:#ffffff"],body [style*="background: #ffffff"],body [style*="background:white"],body [style*="background: white"]{background:var(--km-panel)!important;color:var(--km-text)!important}
+body [style*="color:#111"],body [style*="color: #111"],body [style*="color:#222"],body [style*="color: #222"],body [style*="color:black"],body [style*="color: black"]{color:var(--km-text)!important}
+body img{max-width:100%;height:auto}
+.km-sitebar{position:sticky;top:0;z-index:1000;background:rgba(8,13,24,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--km-line);padding:14px 20px;display:flex;gap:18px;align-items:center;justify-content:space-between;font-family:Inter,system-ui,sans-serif}
+.km-sitebar .brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--km-text);text-decoration:none}
+.km-sitebar nav{display:flex;gap:16px;flex-wrap:wrap;border:0!important}
+.km-sitebar nav a{font-size:13px;color:var(--km-muted);text-decoration:none}
+.km-sitebar nav a:hover{color:var(--km-cyan)}
+.km-page-shell{min-height:100vh}
+@media(max-width:760px){.km-sitebar{align-items:flex-start;flex-direction:column}.km-sitebar nav{gap:10px}}
+</style></head>
+<body><div class="km-sitebar"><a class="brand" href="index.html">K THE KINETIC MINDSET</a><nav><a href="index.html">Home</a><a href="the-kinetic-mindset.html">The Book</a><a href="chapter-1.html">Chapters</a><a href="tools.html">Tools</a><a href="quotes-and-wisdom.html">Quotes</a><a href="index.html#author">Author</a></nav></div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">A reading system, not just a reading list</div>
+    <h1>The Kinetic Mindset</h1>
+    <p>Ten of the most important books ever written on mindset, money, and meaning — distilled into one sequence, where each chapter closes the exact gap the one before it opens.</p>
+    <div class="author-strip">
+      James Allen &nbsp;|&nbsp; James Clear &nbsp;|&nbsp; Joseph Murphy &nbsp;|&nbsp;
+      Robert Kiyosaki &nbsp;|&nbsp; Benjamin Graham &nbsp;|&nbsp; Dale Carnegie &nbsp;|&nbsp;
+      Cal Newport &nbsp;|&nbsp; Ryan Holiday &nbsp;|&nbsp; Carol Dweck &nbsp;|&nbsp;
+      Tim Ferriss &nbsp;|&nbsp; Morgan Housel &nbsp;|&nbsp; Viktor Frankl
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="section">
+    <div class="container">
+      <div class="section-label">Why this exists</div>
+      <h2>Ten books. One order. One system.</h2>
+      <div class="intro-body">
+        <p>Most people who genuinely want to build a better life don't have an information problem. The books behind every chapter here are already sitting on millions of shelves. What's been missing is the order they should be read in, and the connective logic between them.</p>
+        <p>Success starts on the inside and moves outward: paradigm, then habits, then subconscious belief — followed by an asset mindset and disciplined investing — followed by real relationships, protected focus, and psychological resilience — closing on a defined, examined version of freedom, and finally, meaning. Nothing below is arranged alphabetically. Every chapter sits exactly where it does because the one before it creates a specific gap, and the one after it exists to close it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEM MAP -->
+  <div class="section section-alt">
+    <div class="container">
+      <div class="section-label">The system, at a glance</div>
+      <h2>How the ten chapters connect</h2>
+      <p class="lede">Each phase builds on the one before it — internal foundation, then financial engine, then scaling outward, then purpose.</p>
+      <div class="map-frame">
+        <img alt="System map showing all ten chapters grouped into four phases" src="https://blogger.googleusercontent.com/img/a/AVvXsEhjOJL6Wcr4MTq3EHdZPL-8xwGJOjaWzNl4KVGepv74A7GV7poHS4wsJH--BFg9xcICjpBWIj1gOnh-sI59j5lDs1Wm6a4gneWcF8tm1uRkHzLHlWU5AI53917pdD_JDmx5mEKcJDWGKnIZ3BZZ_7MDqvu3HhIq9hY7Pu4QP3MBCmgQ7PLv4r5G9dAkvXag" />
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTERS -->
+  <div class="section" id="chapters">
+    <div class="container">
+      <div class="section-label">The chapters</div>
+      <h2>All ten, in order</h2>
+
+      <div class="phase-heading internal">Part I — The Internal Operating System</div>
+
+      <div class="chapter-card internal">
+        <div class="chapter-num">CHAPTER 1</div>
+        <div class="chapter-title">The Blueprint</div>
+        <div class="chapter-sub">Controlling Your Internal Paradigm</div>
+        <div class="chapter-source">As a Man Thinketh — James Allen</div>
+        <div class="chapter-teaser">Everything downstream starts here: the quality of your thoughts sets the ceiling on the quality of your life. Circumstance is a mirror, not a cause — and this chapter builds a daily practice for auditing and redirecting the thoughts quietly shaping your future.</div>
+        <a class="chapter-link" href="chapter-1.html">Read this chapter →</a>
+      </div>
+
+      <div class="chapter-card internal">
+        <div class="chapter-num">CHAPTER 2</div>
+        <div class="chapter-title">The Foundation</div>
+        <div class="chapter-sub">Automating Your Daily Micro-Actions</div>
+        <div class="chapter-source">Atomic Habits — James Clear</div>
+        <div class="chapter-teaser">Belief that never becomes automatic behavior stays exactly what it started as: a nice idea. The habit loop, the four laws of behavior change, and identity-based habits turn a chosen paradigm into a system that runs without willpower.</div>
+        <a class="chapter-link" href="chapter-2.html">Read this chapter →</a>
+      </div>
+
+      <div class="chapter-card internal">
+        <div class="chapter-num">CHAPTER 3</div>
+        <div class="chapter-title">The Engine</div>
+        <div class="chapter-sub">Programming Belief and Manifestation</div>
+        <div class="chapter-source">The Power of Your Subconscious Mind — Joseph Murphy</div>
+        <div class="chapter-teaser">A habit stack built on top of an unexamined subconscious faces constant, quiet resistance. This chapter goes underneath conscious thought and daily habit, reprogramming the inherited beliefs running on autopilot.</div>
+        <a class="chapter-link" href="chapter-3.html">Read this chapter →</a>
+      </div>
+
+      <div class="phase-heading financial">Part II — The Financial Engine</div>
+
+      <div class="chapter-card financial">
+        <div class="chapter-num">CHAPTER 4</div>
+        <div class="chapter-title">The Defense</div>
+        <div class="chapter-sub">Shifting from a Consumer Mindset to an Asset Collector</div>
+        <div class="chapter-source">Rich Dad Poor Dad — Robert Kiyosaki</div>
+        <div class="chapter-teaser">An asset puts money in your pocket; a liability takes it out — regardless of what either is conventionally called. This chapter installs the vocabulary every later financial chapter depends on.</div>
+        <a class="chapter-link" href="chapter-4.html">Read this chapter →</a>
+      </div>
+
+      <div class="chapter-card financial">
+        <div class="chapter-num">CHAPTER 5</div>
+        <div class="chapter-title">The Offense</div>
+        <div class="chapter-sub">Methodical, Defensive Wealth-Building</div>
+        <div class="chapter-source">The Intelligent Investor — Benjamin Graham</div>
+        <div class="chapter-teaser">Mr. Market's daily price is his mood, not a verdict on value. Margin of safety, a defined investor profile, and a written reaction plan replace fear and greed with discipline.</div>
+        <a class="chapter-link" href="chapter-5.html">Read this chapter →</a>
+      </div>
+
+      <div class="phase-heading scaling">Part III — Scaling Outward</div>
+
+      <div class="chapter-card scaling">
+        <div class="chapter-num">CHAPTER 6</div>
+        <div class="chapter-title">The Lever</div>
+        <div class="chapter-sub">The People Network (The Human Variable)</div>
+        <div class="chapter-source">How to Win Friends and Influence People — Dale Carnegie</div>
+        <div class="chapter-teaser">Success doesn't happen in a vacuum. Genuine interest, honest appreciation, and disagreement without resentment turn an isolated builder into someone capable of leading.</div>
+        <a class="chapter-link" href="chapter-6.html">Read this chapter →</a>
+      </div>
+
+      <div class="chapter-card scaling">
+        <div class="chapter-num">CHAPTER 7</div>
+        <div class="chapter-title">The Filter</div>
+        <div class="chapter-sub">Eliminating Noise and Executing Ruthlessly</div>
+        <div class="chapter-source">Deep Work — Cal Newport</div>
+        <div class="chapter-teaser">A growing network expands the volume of requests competing for your attention. This chapter protects the focused hours your best work actually requires.</div>
+        <a class="chapter-link" href="chapter-7.html">Read this chapter →</a>
+      </div>
+
+      <div class="chapter-card scaling">
+        <div class="chapter-num">CHAPTER 8</div>
+        <div class="chapter-title">The Shield</div>
+        <div class="chapter-sub">Surviving Setbacks and Critics</div>
+        <div class="chapter-source">Ego Is the Enemy — Ryan Holiday &nbsp;|&nbsp; Mindset — Carol S. Dweck</div>
+        <div class="chapter-teaser">Failure is structural data, not a verdict on identity. Fixed versus growth mindset, and ego's damage at every career stage, build the resilience ambitious effort requires.</div>
+        <a class="chapter-link" href="chapter-8.html">Read this chapter →</a>
+      </div>
+
+      <div class="phase-heading culmination">Part IV — Purpose</div>
+
+      <div class="chapter-card culmination">
+        <div class="chapter-num">CHAPTER 9</div>
+        <div class="chapter-title">The Prize</div>
+        <div class="chapter-sub">True Time and Lifestyle Freedom</div>
+        <div class="chapter-source">The 4-Hour Workweek — Tim Ferriss &nbsp;|&nbsp; The Psychology of Money — Morgan Housel</div>
+        <div class="chapter-teaser">Without a defined "enough," accumulation runs forever without ever buying the freedom it was meant to. This chapter ties every prior system into a deliberately chosen life.</div>
+        <a class="chapter-link" href="chapter-9.html">Read this chapter →</a>
+      </div>
+
+      <div class="phase-heading bonus">Bonus</div>
+
+      <div class="chapter-card bonus">
+        <div class="chapter-num">CHAPTER 10 &nbsp;|&nbsp; BONUS</div>
+        <div class="chapter-title">The Legacy</div>
+        <div class="chapter-sub">Purpose and Meaning, Once Time and Money Are No Longer the Constraint</div>
+        <div class="chapter-source">Man's Search for Meaning — Viktor Frankl</div>
+        <div class="chapter-teaser">Once freedom is real, what fills the space the striving leaves behind? Frankl's three sources of meaning — work, love, and the attitude taken toward what can't be changed — close the arc.</div>
+        <a class="chapter-link" href="chapter-10.html">Read this chapter →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EMERGENCY CARDS -->
+  <div class="section section-alt">
+    <div class="container">
+      <div class="section-label">Something to actually keep</div>
+      <h2>The emergency card set</h2>
+      <p class="lede">Nine cards, one per chapter — the exact line to reach for in the specific moment of crisis each chapter is built for. Print, cut, and keep one within reach.</p>
+      <div class="cards-frame">
+        <img alt="Nine printable emergency cards, one per chapter" src="https://blogger.googleusercontent.com/img/a/AVvXsEjTbmXI6hP05OOKzkqPG3wr2QOpYh1Y5fjX9V66Mv0kyjxUANrnwR_4uNmcR_Dwx5iWHEYllEAVjpn8wDvQa5ZAZnuwgOMlthScSKw78-RO1q-7OIu_uKcqgLhaH6s1SIZh_l0bru3bJOo8qLA5-JXWElniqD3_mMMF_ZO4FaA3oZVemDZMhdB9J0SFnBBl" />
+      </div>
+      <div class="cards-caption">Cut along the dashed lines — the rest go wherever they'll actually get seen.</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="signoff">"As he thinks, so he is; as he continues to think, so he remains."</div>
+    <p>— James Allen, Chapter 1. Ten chapters and a bonus chapter later, that sentence is still the first domino in the entire chain.</p>
+    <p style="margin-top: 18px;"><a href="quotes-and-wisdom.html">Browse all 50 lines worth memorizing →</a></p>
+  </footer>
+
+</body>
+</html>
